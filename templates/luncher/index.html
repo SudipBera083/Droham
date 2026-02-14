@@ -1,0 +1,375 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Droham — The Future of Enterprise ERP</title>
+  <meta name="description"
+    content="Next-gen ERP for hospitals, colleges, and custom enterprises. Built for 2030 standards.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{% static 'style/style.css' %}">
+  <script defer src="{% static 'script/script.js' %}"></script>
+</head>
+
+<body>
+
+  <!-- Canvas Background -->
+  <canvas id="particle-canvas"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.6; pointer-events: none;"></canvas>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="container nav-grid">
+      <a href="#" class="brand">
+        <div class="brand-logo">D</div>
+        <span>Droham</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#features" class="nav-link">Platform</a>
+        <a href="#company" class="nav-link">Company</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#demo" class="btn btn-glass">Log In</a>
+        <a href="#demo" class="btn btn-primary btn-glow">Get Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="aurora-bg"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge-pill">
+            <span class="badge-dot"></span>
+            Updates v3.0 Live
+          </div>
+          <h1 class="display-text typewriter-text" data-text="Build Faster.<br>Scale Smarter.">Build Faster.<br>Scale
+            Smarter.</h1>
+          <p
+            style="font-size: 1.125rem; color: var(--text-secondary); margin: 24px 0 40px; max-width: 480px; line-height: 1.7;">
+            {{ description }}
+          </p>
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary btn-glow">Start Building</a>
+            <a href="#" class="btn btn-glass">Documentation</a>
+          </div>
+          <div style="margin-top: 48px; display: flex; align-items: center; gap: 16px;">
+            <div style="display: flex;">
+              <img src="https://ui-avatars.com/api/?name=A&background=random"
+                style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--bg-void); margin-right: -10px;">
+              <img src="https://ui-avatars.com/api/?name=B&background=random"
+                style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--bg-void); margin-right: -10px;">
+              <img src="https://ui-avatars.com/api/?name=C&background=random"
+                style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--bg-void);">
+            </div>
+            <span style="font-size: 0.9rem; color: var(--text-muted);">Trusted by <strong
+                style="color: white;">500+</strong> teams</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" id="hero-tilt">
+          <div class="dashboard-card">
+            <div class="dash-header">
+              <div class="dash-dot red"></div>
+              <div class="dash-dot yellow"></div>
+              <div class="dash-dot green"></div>
+              <div style="margin-left: auto; font-size: 10px; opacity: 0.5;">dashboard.droham.com</div>
+            </div>
+            <div class="dash-body">
+              <div style="display: flex; gap: 20px;">
+                <div
+                  style="width: 200px; padding: 16px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                  <div style="font-size: 12px; margin-bottom: 8px;">Total Revenue</div>
+                  <div style="font-size: 24px; color: white; font-weight: 700;">$124,500</div>
+                  <div style="height: 4px; width: 100%; background: #333; margin-top: 12px; border-radius: 2px;">
+                    <div style="height: 100%; width: 70%; background: var(--accent-primary); border-radius: 2px;"></div>
+                  </div>
+                </div>
+                <div
+                  style="flex: 1; padding: 16px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                  <div style="font-size: 12px; margin-bottom: 8px;">Active Sessions</div>
+                  <div style="display: flex; align-items: flex-end; height: 60px; gap: 4px;">
+                    <div style="flex: 1; background: var(--accent-violet); height: 40%; opacity: 0.4;"></div>
+                    <div style="flex: 1; background: var(--accent-violet); height: 70%; opacity: 0.6;"></div>
+                    <div style="flex: 1; background: var(--accent-violet); height: 50%; opacity: 0.5;"></div>
+                    <div style="flex: 1; background: var(--accent-violet); height: 90%;"></div>
+                    <div style="flex: 1; background: var(--accent-violet); height: 60%; opacity: 0.7;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Floating Element -->
+            <div
+              style="position: absolute; bottom: -20px; right: -20px; background: var(--bg-elevated); padding: 12px 20px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 10px; animation: float 4s ease-in-out infinite;">
+              <div style="width: 8px; height: 8px; background: #22c55e; border-radius: 50%;"></div>
+              <span style="font-size: 0.85rem; font-weight: 600;">System Optimal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats-strip">
+      <div class="container stats-flex">
+        <div class="stat-item">
+          <div class="stat-num counter" data-target="99.9">0</div>
+          <div class="stat-label">% Uptime</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num counter" data-target="150" data-suffix="+">0</div>
+          <div class="stat-label">Integrations</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num counter" data-target="24" data-suffix="/7">0</div>
+          <div class="stat-label">Expert Support</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num counter" data-target="500" data-suffix="k">0</div>
+          <div class="stat-label">Daily Events</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products / Bento Grid -->
+    <section id="products" class="section">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 60px;">
+          <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 16px;">Intelligent Modules.</h2>
+          <p style="color: var(--text-secondary);">{{ Intelligent_Modules.desc }}</p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Feature 1 -->
+          <div class="glass-panel bento-item span-2">
+            <div class="spotlight"></div>
+            <div style="position: absolute; top: 30px; right: 30px; font-size: 2rem;">🧬</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 12px; position: relative;">Pathology LIS</h3>
+            <p style="color: var(--text-secondary); position: relative;">{{Intelligent_Modules.Pathology_LIS}}</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="glass-panel bento-item">
+            <div class="spotlight"></div>
+            <div style="position: absolute; top: 30px; right: 30px; font-size: 2rem;">🏥</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 12px; position: relative;">Hospital HMS</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; position: relative;">{{Intelligent_Modules.Hospital_HMS}}</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="glass-panel bento-item">
+            <div class="spotlight"></div>
+            <div style="position: absolute; top: 30px; right: 30px; font-size: 2rem;">🎓</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 12px; position: relative;">Campus Edu</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; position: relative;">{{Intelligent_Modules.Campus_Edu}}</p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="glass-panel bento-item span-2">
+            <div class="spotlight"></div>
+            <div style="position: absolute; top: 30px; right: 30px; font-size: 2rem;">⚡</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 12px; position: relative;">Real-time Analytics</h3>
+            <p style="color: var(--text-secondary); position: relative;">{{Intelligent_Modules.Real_time_Analytics}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 60px;">
+          <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 16px;">Simple Pricing.</h2>
+          <p style="color: var(--text-secondary);">{{ Simple_Pricing.desc }}
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+          <!-- Starter -->
+          <div class="glass-panel"
+            style="padding: 40px; border-radius: var(--radius-xl); display: flex; flex-direction: column;">
+            <div style="margin-bottom: 24px;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Starter</h3>
+              <div style="display: flex; align-items: baseline; gap: 4px;">
+                <span style="font-size: 2.5rem; font-weight: 700; color: white;">{{ Simple_Pricing.Starter }}</span>
+                <span style="color: var(--text-muted);">{{ Simple_Pricing.duration }}</span>
+              </div>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 12px;">Essential tools for small
+                clinics and labs.</p>
+            </div>
+            <ul
+              style="margin-bottom: 32px; color: var(--text-secondary); font-size: 0.95rem; display: flex; flex-direction: column; gap: 12px;">
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> 1 Core Module
+              </li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Up to 50 Users
+              </li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Basic Analytics
+              </li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Email Support
+              </li>
+            </ul>
+            <div style="margin-top: auto;">
+              <a href="#contact" class="btn btn-glass" style="width: 100%; justify-content: center;">Get Started</a>
+            </div>
+          </div>
+
+          <!-- Business (Featured) -->
+          <div class="glass-panel"
+            style="padding: 40px; border-radius: var(--radius-xl); display: flex; flex-direction: column; border-color: var(--accent-primary); position: relative;">
+            <div
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -20%, rgba(99, 102, 241, 0.15), transparent 70%); pointer-events: none;">
+            </div>
+            <div
+              style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent-primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);">
+              MOST POPULAR</div>
+
+            <div style="margin-bottom: 24px;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 8px; color: var(--accent-primary);">Business</h3>
+              <div style="display: flex; align-items: baseline; gap: 4px;">
+                <span style="font-size: 2.5rem; font-weight: 700; color: white;">{{ Simple_Pricing.Business }}</span>
+                <span style="color: var(--text-muted);">{{ Simple_Pricing.duration }}</span>
+              </div>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 12px;">For growing hospitals &
+                institutions.</p>
+            </div>
+            <ul
+              style="margin-bottom: 32px; color: var(--text-secondary); font-size: 0.95rem; display: flex; flex-direction: column; gap: 12px;">
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> All Modules
+                Included</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Unlimited Users
+              </li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Advanced
+                Analytics + AI</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> 24/7 Priority
+                Support</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Custom
+                Integrations</li>
+            </ul>
+            <div style="margin-top: auto;">
+              <a href="#contact" class="btn btn-primary btn-glow" style="width: 100%; justify-content: center;">Choose
+                Business</a>
+            </div>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="glass-panel"
+            style="padding: 40px; border-radius: var(--radius-xl); display: flex; flex-direction: column;">
+            <div style="margin-bottom: 24px;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Enterprise</h3>
+              <div style="display: flex; align-items: baseline; gap: 4px;">
+                <span style="font-size: 2.5rem; font-weight: 700; color: white;">Custom</span>
+              </div>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 12px;">For large-scale
+                multi-premise deployments.</p>
+            </div>
+            <ul
+              style="margin-bottom: 32px; color: var(--text-secondary); font-size: 0.95rem; display: flex; flex-direction: column; gap: 12px;">
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Everything in
+                Business</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> On-Premise /
+                Private Cloud</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Dedicated
+                Infrastructure</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Custom SLAs &
+                Contracts</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> White-label
+                Options</li>
+            </ul>
+            <div style="margin-top: auto;">
+              <a href="#contact" class="btn btn-glass" style="width: 100%; justify-content: center;">Contact Sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="padding-bottom: 100px;">
+      <div class="container">
+        <div class="glass-panel"
+          style="padding: 80px; text-align: center; border-radius: var(--radius-xl); position: relative; overflow: hidden;">
+          <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -20%, rgba(129, 140, 248, 0.2), transparent 70%); pointer-events: none;">
+          </div>
+
+          <h2 style="font-size: 3rem; margin-bottom: 24px; position: relative;">Ready to modernize?</h2>
+          <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 40px; position: relative;">Join the
+            next generation of enterprises running on Droham. Safe, secure, and scalable.</p>
+
+          <div style="position: relative; z-index: 2;">
+            <a href="#" class="btn btn-primary btn-glow" style="padding: 16px 48px; font-size: 1.1rem;">Get Started
+              Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#" class="brand" style="margin-bottom: 20px;">
+            <div class="brand-logo">D</div>
+            <span>Droham</span>
+          </a>
+          <p class="footer-desc">Building the operating system for modern enterprises. Scalable, secure, and always
+            online.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy-row">
+        <div>&copy; 2026 Droham Private Limited.</div>
+        <div style="display: flex; gap: 24px;">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
