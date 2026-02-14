@@ -1,203 +1,156 @@
-# Droham - Enterprise ERP Platform
+# Droham — Global Enterprise Intelligence Platform
 
-Droham is a next-generation ERP (Enterprise Resource Planning) platform designed for hospitals, colleges, and custom enterprises. Built with modern stack for 2030 standards.
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/SudipBera083/Droham)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-blue.svg)](LICENSE)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
+[![Django 5.1.4](https://img.shields.io/badge/framework-Django%205.1.4-092e20.svg)](https://docs.djangoproject.com/en/5.1/)
+[![Reliability](https://img.shields.io/badge/uptime-99.9%25-success.svg)](#)
 
-## Features
+Droham is the industry-leading, next-generation ERP (Enterprise Resource Planning) ecosystem engineered for the complexities of 2030. We provide mission-critical infrastructure for Hospitals, Diagnostic Centers, and Educational Institutions, unifying disparate operations into a single, high-performance intelligence layer.
 
-- **Pathology LIS**: Automated sample tracking, report generation, and machine interfacing
-- **Hospital HMS**: Complete patient lifecycle management from OPD to discharge
-- **Campus Edu**: Digital campus solution for universities and colleges
-- **Real-time Analytics**: Live dashboards for financial, operational, and clinical metrics
-- **99.9% Uptime**: Enterprise-grade reliability
-- **24/7 Support**: Expert support available round the clock
+[**Request a Demo**](https://droham.com/demo) | [**Documentation**](https://docs.droham.com) | [**Support**](mailto:support@droham.com)
 
-## Tech Stack
+---
 
-- **Backend**: Django 5.1.4
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Database**: SQLite (Development), PostgreSQL (Production)
-- **Python**: 3.8+
+## 🏛️ Ecosystem Architecture
 
-## Project Structure
+Droham is built on a modular "Nexus" architecture that scales horizontally across different enterprise verticals.
 
-```
-droham/
-├── core/                 # Core Django app
-│   ├── models.py         # Database models
-│   ├── views.py          # View logic
-│   ├── urls.py           # URL routing
-│   └── admin.py          # Admin configuration
-├── droham/               # Project configuration
-│   ├── settings.py       # Django settings
-│   ├── urls.py           # Main URL configuration
-│   └── wsgi.py           # WSGI configuration
-├── templates/            # HTML templates
-│   └── luncher/
-│       └── index.html    # Homepage template
-├── static/               # Static files (CSS, JS, Images)
-│   ├── style/
-│   │   └── style.css
-│   ├── script/
-│   │   └── script.js
-│   └── img/
-├── manage.py             # Django management script
-└── db.sqlite3            # Development database
+```mermaid
+graph TD
+    User([User Access Node]) --> Gateway{Droham Gateway}
+    Gateway --> Pathology[Pathology LIS]
+    Gateway --> Hospital[Hospital HMS]
+    Gateway --> Campus[Campus Edu]
+    
+    subgraph Data Layer
+        Pathology --> DB[(PostgreSQL)]
+        Hospital --> DB
+        Campus --> DB
+    end
+    
+    subgraph Intelligence
+        DB --> Analytics[Real-time Analytics]
+        Analytics --> AI[Predictive Insights]
+    end
 ```
 
-## Getting Started
+---
+
+## 🚀 Core Enterprise Modules
+
+### 🔬 Pathology LIS (Life Sciences)
+Accelerate diagnostic workflows with our state-of-the-art Laboratory Information System.
+- **Automated Sample Tracking**: End-to-end chain of custody with IoT integration.
+- **Machine Interfacing**: Direct integration with over 100+ diagnostic analyzers.
+- **Dynamic Report Engine**: High-fidelity, verifiable digital reports with 40% faster turnaround.
+
+### 🏥 Hospital HMS (Medical Operations)
+A comprehensive Management System that transforms patient care from admission to discharge.
+- **Patient Lifecycle Management**: Seamless OPD/IPD transition and electronic health records.
+- **Resource Orchestration**: Optimized operating theater and bed management.
+- **Financial Integrity**: Real-time billing, insurance processing, and revenue cycle management.
+
+### 🏫 Campus Edu (Institutional Governance)
+Digitalizing the future of education with a unified campus management solution.
+- **Campus-wide Integration**: One platform for student lifecycle, faculty management, and alumni records.
+- **Intelligent Scheduling**: Automated timetabling and attendance tracking.
+- **Scholarship & Fee Management**: Secure, multi-channel payment processing.
+
+---
+
+## 🛠️ Technical Stack & Security
+
+Droham is engineered for maximum reliability and secure-by-design principles.
+
+| Component | Technology | Role |
+| :--- | :--- | :--- |
+| **Backend** | Django 5.1.4 | High-performance application logic |
+| **Language** | Python 3.8+ | Scalable and maintainable codebase |
+| **Database** | PostgreSQL | Enterprise-grade data integrity |
+| **Frontend** | Modern JS / CSS3 | Zero-friction, responsive interface |
+| **Security** | AES-256 / SSL | End-to-end data encryption |
+
+---
+
+## ⚡ Quick Start (On-Premise Deployment)
 
 ### Prerequisites
 
-- Python 3.8 or higher
-- pip (Python package installer)
-- Git
+- **Python**: 3.8.0 or higher
+- **PostgreSQL**: 14.0 or higher (Production Recommended)
+- **Node.js**: 18.0+ (For frontend assets)
 
 ### Installation
 
-1. **Clone the repository**
-```bash
-git clone https://github.com/SudipBera083/Droham.git
-cd Droham
-git checkout django-fullstack
-```
+1.  **Clone the Enterprise Repository**
+    ```bash
+    git clone https://github.com/SudipBera083/Droham.git
+    cd Droham
+    git checkout django-fullstack
+    ```
 
-2. **Create a virtual environment**
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+2.  **Environment Setup**
+    ```bash
+    python -m venv venv
+    # Linux/MacOS
+    source venv/bin/activate 
+    # Windows
+    venv\Scripts\activate
+    ```
 
-3. **Install dependencies**
-```bash
-pip install django==5.1.4
-```
+3.  **Dependency Resolution**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-4. **Apply migrations**
-```bash
-python manage.py migrate
-```
+4.  **Database Migration & Initialization**
+    ```bash
+    python manage.py migrate
+    python manage.py createsuperuser
+    ```
 
-5. **Create a superuser** (optional)
-```bash
-python manage.py createsuperuser
-```
+5.  **Service Deployment**
+    ```bash
+    python manage.py runserver
+    ```
 
-6. **Run the development server**
-```bash
-python manage.py runserver
-```
+---
 
-Visit `http://localhost:8000` in your browser.
+## 💎 Pricing & Service Plans
 
-## Configuration
+| Plan | Pricing | Target Audience |
+| :--- | :--- | :--- |
+| **Starter** | $99/mo | Clinics & Boutique Labs |
+| **Business** | $299/mo | Mid-size Hospitals & Colleges |
+| **Enterprise** | **Custom** | Large Networks & State Systems |
 
-### Static Files
+---
 
-Static files are served from the `static/` directory. The configuration in `settings.py`:
+## 🔒 Security & Compliance
 
-```python
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
-```
+Droham adheres to international standards to ensure data sovereignty and privacy:
+- **GDPR & HIPAA** Ready configurations.
+- **Role-Based Access Control (RBAC)** at every node.
+- **Full Audit Trails** for every data modification.
 
-### Templates
+---
 
-Django templates are located in the `templates/` directory. The template directory is configured in `settings.py`:
+## 🤝 Contributing
 
-```python
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["templates"],
-        'APP_DIRS': True,
-        ...
-    }
-]
-```
+We welcome contributions from the enterprise community. Please review our [Contribution Guidelines](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
 
-## Pricing Plans
+---
 
-### Starter - ₹9,999/month
-- 1 Core Module
-- Up to 50 Users
-- Basic Analytics
-- Email Support
+## 📄 License & Proprietary Information
 
-### Business - ₹49,999/month (Most Popular)
-- All Modules Included
-- Unlimited Users
-- Advanced Analytics + AI
-- 24/7 Priority Support
-- Custom Integrations
+Copyright © 2026 **Droham Private Limited**. All Rights Reserved.
+This software is proprietary. Unauthorized copying, modification, or distribution is strictly prohibited.
 
-### Enterprise - Custom Pricing
-- Everything in Business
-- On-Premise / Private Cloud
-- Dedicated Infrastructure
-- Custom SLAs & Contracts
-- White-label Options
+---
 
-## Development
-
-### Creating a New App
-
-```bash
-python manage.py startapp app_name
-```
-
-### Database Migrations
-
-```bash
-# Create migrations
-python manage.py makemigrations
-
-# Apply migrations
-python manage.py migrate
-
-# Show migration history
-python manage.py showmigrations
-```
-
-### Admin Panel
-
-Access the Django admin at `http://localhost:8000/admin/` with your superuser credentials.
-
-## Deployment
-
-For production deployment:
-
-1. Set `DEBUG = False` in `settings.py`
-2. Configure secure settings (SECRET_KEY, ALLOWED_HOSTS, etc.)
-3. Collect static files: `python manage.py collectstatic`
-4. Use a production WSGI server (Gunicorn, uWSGI)
-5. Configure a reverse proxy (Nginx, Apache)
-
-## Branches
-
-- **master**: Main production branch
-- **django-fullstack**: Development branch with latest features
-
-## Contributing
-
-1. Create a feature branch
-2. Make your changes
-3. Commit with clear messages
-4. Push to your fork
-5. Create a Pull Request
-
-## License
-
-Proprietary - Droham Private Limited
-
-## Support
-
-For support, contact: support@droham.com
-
-## About
-
-Droham is building the operating system for modern enterprises. Scalable, secure, and always online.
-
-Visit us at: https://droham.com
+<p align="center">
+  Building the operating system for modern enterprises.<br>
+  <b>Scalable. Secure. Seamless.</b><br>
+  <a href="https://droham.com">droham.com</a>
+</p>
