@@ -1,5 +1,5 @@
 /* ================================================================
-   DROHAM — Next-Gen Enterprise Interface (2026)
+   DROHAM — Next-Gen Enterprise Interface (2026) - v3.1
    Design System: Deep Void, Electric Gradients, Hyper-Glass
    ================================================================ */
 
@@ -126,12 +126,14 @@ h6 {
   letter-spacing: -0.03em;
   background: linear-gradient(to right, #fff, #a5a5a5);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-text {
   background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #60a5fa 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
