@@ -1,221 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Droham Private Limited — Next‑gen Enterprise ERP</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./src/style/style.css">
-    <script defer src="./src/script/script.js"></script>
-  </head>
-  <body>
-    <!-- dynamic background (particles / mesh gradient) -->
-    <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Droham Private Limited — Next-Gen Enterprise ERP Solutions</title>
+  <meta name="description" content="Droham Private Limited provides enterprise-grade ERP solutions for hospitals, pathology labs, colleges, and custom businesses. Scalable, secure, and built for the future.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/style/style.css">
+  <script defer src="./src/script/script.js"></script>
+</head>
+<body>
+  <!-- Animated mesh gradient background -->
+  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
 
-    <header class="site-header">
-      <div class="container nav-container">
-        <a class="brand" href="#">Droham</a>
-        <nav class="main-nav" aria-label="Primary">
-          <ul>
-            <li class="has-dropdown">
-              <button class="dropdown-toggle" aria-expanded="false">Products</button>
-              <ul class="dropdown" role="menu">
-                <li><a href="#modules">Pathology</a></li>
-                <li><a href="#modules">Hospital</a></li>
-                <li><a href="#modules">College</a></li>
-                <li><a href="#modules">Custom ERP</a></li>
-              </ul>
-            </li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="nav-actions">
-          <button class="btn-ghost" id="request-demo">Request Demo</button>
-          <button class="mobile-menu-toggle" aria-label="Open menu">☰</button>
-        </div>
+  <!-- ─── HEADER / NAV ─── -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="#">
+        <span class="brand-icon">◆</span> Droham
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Primary">
+        <ul>
+          <li class="has-dropdown">
+            <button class="dropdown-toggle" aria-expanded="false">Products <span class="chevron">▾</span></button>
+            <ul class="dropdown" role="menu">
+              <li><a href="#modules"><span class="dd-icon">🔬</span> Pathology Management</a></li>
+              <li><a href="#modules"><span class="dd-icon">🏥</span> Hospital Management</a></li>
+              <li><a href="#modules"><span class="dd-icon">🎓</span> College Management</a></li>
+              <li><a href="#modules"><span class="dd-icon">⚙️</span> Custom ERP</a></li>
+            </ul>
+          </li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#stats">About</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="#contact">Request Demo</a>
+        <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero section" id="home">
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <h1 class="hero-headline">Enterprise ERP, Reimagined for the Future</h1>
-            <p class="hero-lead">Scalable, secure ERP for hospitals, labs, colleges and complex enterprises — built to scale from pilot to nation‑wide deployments.</p>
-            <div class="hero-ctas">
-              <a class="btn btn-primary" href="#pricing">Get Started</a>
-              <a class="btn btn-secondary" href="#contact">Book a Demo</a>
-            </div>
-            <div class="hero-anchors">
-              <div class="anchor">99.9% Uptime</div>
-              <div class="anchor">24/7 Support</div>
-              <div class="anchor">500+ Organizations</div>
-            </div>
+  <main>
+    <!-- ─── HERO ─── -->
+    <section class="hero section" id="home">
+      <div class="hero-glow"></div>
+      <div class="hero-glow-2"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="hero-badge anim-fade-up">
+            <span class="badge-dot"></span>
+            Now serving 500+ organizations across India
           </div>
+          <h1 class="hero-headline anim-fade-up anim-d1">
+            Enterprise ERP,<br>
+            <span class="gradient-text">Reimagined</span> for the Future
+          </h1>
+          <p class="hero-lead anim-fade-up anim-d2">
+            Scalable, secure ERP for hospitals, pathology labs, colleges and complex enterprises — built to scale from pilot to nation-wide deployments.
+          </p>
+          <div class="hero-ctas anim-fade-up anim-d3">
+            <a class="btn btn-primary btn-glow" href="#pricing">
+              Get Started
+              <span class="btn-arrow">→</span>
+            </a>
+            <a class="btn btn-secondary" href="#contact">
+              <span class="play-icon">▶</span> Watch Demo
+            </a>
+          </div>
+          <div class="hero-trust anim-fade-up anim-d4">
+            <div class="trust-item"><span class="trust-num">99.9%</span> Uptime</div>
+            <div class="trust-divider"></div>
+            <div class="trust-item"><span class="trust-num">24/7</span> Support</div>
+            <div class="trust-divider"></div>
+            <div class="trust-item"><span class="trust-num">500+</span> Organizations</div>
+          </div>
+        </div>
 
-          <!-- 3D dashboard mockup with floating elements -->
-          <div class="hero-visual" id="hero-visual">
-            <div class="floating-scene" data-tilt>
-              <div class="glow-orb"></div>
-              <div class="card-3d dashboard-3d">
-                <div class="dashboard-panel">
-                  <div class="dp-header"></div>
-                  <div class="dp-body">
-                    <div class="kpis">
-                      <div class="kpi"><div class="num">1,238</div><div class="label">Active Users</div></div>
-                      <div class="kpi"><div class="num">24</div><div class="label">Hospitals</div></div>
-                      <div class="kpi"><div class="num">4.5k</div><div class="label">Tx Today</div></div>
-                    </div>
-                    <div class="dp-graph"></div>
+        <!-- 3D Dashboard Mockup -->
+        <div class="hero-visual anim-fade-up anim-d2" id="hero-visual">
+          <div class="floating-scene" id="tilt-scene">
+            <div class="glow-orb"></div>
+            <div class="glow-orb-2"></div>
+            <div class="dashboard-3d">
+              <div class="dash-topbar">
+                <div class="dash-dots"><span></span><span></span><span></span></div>
+                <div class="dash-url">dashboard.droham.com</div>
+              </div>
+              <div class="dash-sidebar">
+                <div class="sb-item active"></div>
+                <div class="sb-item"></div>
+                <div class="sb-item"></div>
+                <div class="sb-item"></div>
+                <div class="sb-item"></div>
+              </div>
+              <div class="dash-content">
+                <div class="dash-kpis">
+                  <div class="dash-kpi">
+                    <div class="kpi-label">Active Users</div>
+                    <div class="kpi-val">1,238</div>
+                    <div class="kpi-bar"><span style="width:78%"></span></div>
+                  </div>
+                  <div class="dash-kpi">
+                    <div class="kpi-label">Hospitals</div>
+                    <div class="kpi-val">24</div>
+                    <div class="kpi-bar"><span style="width:60%"></span></div>
+                  </div>
+                  <div class="dash-kpi">
+                    <div class="kpi-label">Tx Today</div>
+                    <div class="kpi-val">4.5k</div>
+                    <div class="kpi-bar"><span style="width:92%"></span></div>
                   </div>
                 </div>
+                <div class="dash-chart">
+                  <svg viewBox="0 0 300 80" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="chart-grad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="rgba(99,102,241,0.3)" />
+                        <stop offset="100%" stop-color="rgba(99,102,241,0)" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M0 60 Q30 40 60 50 Q90 60 120 35 Q150 10 180 25 Q210 40 240 20 Q270 5 300 15 V80 H0 Z" fill="url(#chart-grad)" />
+                    <path d="M0 60 Q30 40 60 50 Q90 60 120 35 Q150 10 180 25 Q210 40 240 20 Q270 5 300 15" fill="none" stroke="rgba(99,102,241,0.8)" stroke-width="2" />
+                  </svg>
+                </div>
               </div>
-
-              <!-- floating small UI chips -->
-              <div class="chip chip-a">Lab Results</div>
-              <div class="chip chip-b">Admissions</div>
-              <div class="chip chip-c">Billing</div>
+            </div>
+            <!-- Floating chips -->
+            <div class="float-chip chip-a">
+              <span class="chip-icon">📊</span> Lab Results Ready
+            </div>
+            <div class="float-chip chip-b">
+              <span class="chip-icon">✅</span> 12 Admissions
+            </div>
+            <div class="float-chip chip-c">
+              <span class="chip-icon">💰</span> ₹2.4L Revenue
             </div>
           </div>
         </div>
-      </section>
+      </div>
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator">
+        <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+      </div>
+    </section>
 
-      <!-- 3D Product Cards -->
-      <section id="modules" class="section modules-3d">
-        <div class="container">
-          <h2 class="section-title">Modules</h2>
-          <p class="section-sub">Floating 3D cards showcasing Droham modules.</p>
-          <div class="modules-grid">
-            <div class="module-card" data-tilt>
-              <div class="m-icon">🔬</div>
-              <h3>Pathology Management</h3>
-              <p>Lab workflows, LIS, reporting and billing.</p>
+    <!-- ─── LOGOS / SOCIAL PROOF ─── -->
+    <section class="section logos-section">
+      <div class="container">
+        <p class="logos-label">Trusted by leading institutions across India</p>
+        <div class="logos-track">
+          <div class="logo-item">Apollo Hospitals</div>
+          <div class="logo-item">Max Healthcare</div>
+          <div class="logo-item">Fortis</div>
+          <div class="logo-item">Manipal University</div>
+          <div class="logo-item">SRL Diagnostics</div>
+          <div class="logo-item">Medanta</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 3D MODULE CARDS ─── -->
+    <section id="modules" class="section modules-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Our Modules</span>
+          <h2 class="section-title">Powerful ERP Modules<br><span class="gradient-text">Built for Every Industry</span></h2>
+          <p class="section-sub">Each module is a complete, standalone system — or combine them for a unified enterprise platform.</p>
+        </div>
+        <div class="modules-grid">
+          <div class="module-card" data-tilt>
+            <div class="card-glow"></div>
+            <div class="m-icon-wrap">
+              <svg class="m-icon-svg" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="url(#g1)" opacity="0.15"/><path d="M16 32V20l8-6 8 6v12" stroke="url(#g1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 32v-6h8v6" stroke="url(#g1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g1" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#818cf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs></svg>
             </div>
-            <div class="module-card popular" data-tilt>
-              <div class="m-icon">🏥</div>
-              <h3>Hospital Management</h3>
-              <p>Patient flow, scheduling, inventory and finance.</p>
+            <div class="m-emoji">🔬</div>
+            <h3>Pathology Management</h3>
+            <p>Complete lab workflows — LIS integration, automated reporting, sample tracking, and billing. NABL-ready compliance.</p>
+            <a class="card-link" href="#">Learn more →</a>
+          </div>
+
+          <div class="module-card featured" data-tilt>
+            <div class="card-glow"></div>
+            <span class="card-badge">Most Popular</span>
+            <div class="m-emoji">🏥</div>
+            <h3>Hospital Management</h3>
+            <p>End-to-end hospital operations — OPD/IPD, scheduling, inventory, pharmacy, finance, and HR management.</p>
+            <a class="card-link" href="#">Learn more →</a>
+          </div>
+
+          <div class="module-card" data-tilt>
+            <div class="card-glow"></div>
+            <div class="m-emoji">🎓</div>
+            <h3>College Management</h3>
+            <p>Admissions, attendance, exam management, fee collection, library, and hostel — all in one platform.</p>
+            <a class="card-link" href="#">Learn more →</a>
+          </div>
+
+          <div class="module-card" data-tilt>
+            <div class="card-glow"></div>
+            <div class="m-emoji">⚙️</div>
+            <h3>Custom Enterprise ERP</h3>
+            <p>Tailored solutions for unique business processes — custom workflows, integrations, APIs, and dedicated SLAs.</p>
+            <a class="card-link" href="#">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FEATURES ─── -->
+    <section id="features" class="section features-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Platform</span>
+          <h2 class="section-title">Enterprise-Grade<br><span class="gradient-text">Platform Features</span></h2>
+          <p class="section-sub">Built on modern cloud infrastructure with security, scalability, and performance at its core.</p>
+        </div>
+        <!-- Animated connecting lines -->
+        <div class="features-stage">
+          <svg class="features-lines" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
+            <path class="line-path" d="M100 200 C300 50,500 350,700 150 S1000 300,1100 100" />
+            <path class="line-path line-path-2" d="M50 300 C250 100,450 350,650 200 S900 50,1150 250" />
+          </svg>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="f-icon">🏗️</div>
+              <h4>Scalable Architecture</h4>
+              <p>Multi-tenant, cloud-native infrastructure. Auto-scales from 10 to 10,000+ concurrent users.</p>
             </div>
-            <div class="module-card" data-tilt>
-              <div class="m-icon">🎓</div>
-              <h3>College Management</h3>
-              <p>Admissions, attendance, exams and fees.</p>
+            <div class="feature-card">
+              <div class="f-icon">🔒</div>
+              <h4>Enterprise Security</h4>
+              <p>SSO, RBAC, end-to-end encryption, audit trails, and HIPAA-ready compliance frameworks.</p>
             </div>
-            <div class="module-card" data-tilt>
-              <div class="m-icon">⚙️</div>
-              <h3>Custom ERP</h3>
-              <p>Tailored workflows, integrations and SLAs.</p>
+            <div class="feature-card">
+              <div class="f-icon">📊</div>
+              <h4>Real-Time Analytics</h4>
+              <p>Live dashboards, predictive insights, automated alerts, and custom report builder.</p>
+            </div>
+            <div class="feature-card">
+              <div class="f-icon">🔄</div>
+              <h4>Custom Workflows</h4>
+              <p>Visual drag-and-drop workflow builder. Automate approvals, notifications, and processes.</p>
+            </div>
+            <div class="feature-card">
+              <div class="f-icon">🔌</div>
+              <h4>API-First Design</h4>
+              <p>RESTful APIs for everything. Integrate with payment gateways, labs, and third-party systems.</p>
+            </div>
+            <div class="feature-card">
+              <div class="f-icon">📱</div>
+              <h4>Mobile Ready</h4>
+              <p>Responsive web app + native mobile apps for iOS and Android. Works offline.</p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Features / interactive connections -->
-      <section id="features" class="section features-advanced">
-        <div class="container">
-          <h2 class="section-title">Platform Features</h2>
-          <div class="features-stage">
-            <svg class="feature-connect" viewBox="0 0 800 200" preserveAspectRatio="none" aria-hidden="true"><path d="M20 100 C200 20 400 180 780 80" stroke="rgba(11,99,212,0.18)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-            <div class="features-grid">
-              <div class="feature-card"> <h4>Scalable Architecture</h4><p>Multi-tenant, cloud native.</p></div>
-              <div class="feature-card"> <h4>Enterprise Security</h4><p>SSO, RBAC, audit trails.</p></div>
-              <div class="feature-card"> <h4>Real-time Analytics</h4><p>Live dashboards & alerts.</p></div>
-              <div class="feature-card"> <h4>Custom Workflows</h4><p>Visual workflow builder.</p></div>
-            </div>
-          </div>
+    <!-- ─── STATS ─── -->
+    <section id="stats" class="section stats-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Impact</span>
+          <h2 class="section-title">Numbers That<br><span class="gradient-text">Speak for Themselves</span></h2>
         </div>
-      </section>
-
-      <!-- Stats with animated counters -->
-      <section class="section stats-advanced">
-        <div class="container stats-inner">
-          <div class="stat-panel glass">
-            <div class="stat-num" data-count="99.9">0</div>
-            <div class="stat-label">Uptime %</div>
+        <div class="stats-grid">
+          <div class="stat-card glass">
+            <div class="stat-glow"></div>
+            <div class="stat-num" data-count="99.9" data-suffix="%">0</div>
+            <div class="stat-label">Uptime Guarantee</div>
           </div>
-          <div class="stat-panel glass">
-            <div class="stat-num" data-count="24">0</div>
-            <div class="stat-label">7 Support</div>
-          </div>
-          <div class="stat-panel glass">
-            <div class="stat-num" data-count="500">0</div>
+          <div class="stat-card glass">
+            <div class="stat-glow"></div>
+            <div class="stat-num" data-count="500" data-suffix="+">0</div>
             <div class="stat-label">Organizations</div>
           </div>
-          <div class="stat-panel glass">
-            <div class="stat-num" data-count="50000">0</div>
-            <div class="stat-label">Users</div>
+          <div class="stat-card glass">
+            <div class="stat-glow"></div>
+            <div class="stat-num" data-count="50000" data-suffix="+">0</div>
+            <div class="stat-label">Active Users</div>
+          </div>
+          <div class="stat-card glass">
+            <div class="stat-glow"></div>
+            <div class="stat-num" data-count="15" data-suffix="M+">0</div>
+            <div class="stat-label">Transactions Processed</div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Pricing -->
-      <section id="pricing" class="section pricing-3d">
-        <div class="container">
-          <h2 class="section-title">Pricing</h2>
-          <div class="pricing-grid">
-            <div class="price glass">
-              <div class="tier">Starter</div>
-              <div class="amount">$99<span>/mo</span></div>
-              <ul class="benefits"><li>Core modules</li><li>Email support</li></ul>
-              <button class="btn btn-outline">Start</button>
+    <!-- ─── HOW IT WORKS ─── -->
+    <section class="section how-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Process</span>
+          <h2 class="section-title">Get Started in<br><span class="gradient-text">Three Simple Steps</span></h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <h4>Choose Your Modules</h4>
+            <p>Select from our range of ERP modules or go for a complete enterprise suite.</p>
+          </div>
+          <div class="step-connector"><svg viewBox="0 0 100 20"><path d="M0 10 L90 10" stroke="rgba(99,102,241,0.3)" stroke-width="2" stroke-dasharray="6,4"/><polygon points="90,5 100,10 90,15" fill="rgba(99,102,241,0.3)"/></svg></div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <h4>Configure & Deploy</h4>
+            <p>Our team configures your instance, migrates data, and deploys in under 48 hours.</p>
+          </div>
+          <div class="step-connector"><svg viewBox="0 0 100 20"><path d="M0 10 L90 10" stroke="rgba(99,102,241,0.3)" stroke-width="2" stroke-dasharray="6,4"/><polygon points="90,5 100,10 90,15" fill="rgba(99,102,241,0.3)"/></svg></div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <h4>Scale & Grow</h4>
+            <p>Go live with full support. Scale from one location to hundreds as you grow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PRICING ─── -->
+    <section id="pricing" class="section pricing-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Pricing</span>
+          <h2 class="section-title">Simple, Transparent<br><span class="gradient-text">Pricing</span></h2>
+          <p class="section-sub">Start small, scale big. No hidden fees, no surprises.</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="price-card glass">
+            <div class="tier">Starter</div>
+            <div class="price-amount">₹9,999<span>/mo</span></div>
+            <p class="price-desc">Perfect for small clinics and labs</p>
+            <ul class="benefits">
+              <li><span class="check">✓</span> 1 Core Module</li>
+              <li><span class="check">✓</span> Up to 50 Users</li>
+              <li><span class="check">✓</span> Email Support</li>
+              <li><span class="check">✓</span> Basic Analytics</li>
+              <li><span class="check dim">✓</span> Standard SLA</li>
+            </ul>
+            <a class="btn btn-outline-price" href="#contact">Get Started</a>
+          </div>
+
+          <div class="price-card glass featured-price" data-tilt>
+            <div class="price-badge">Most Popular</div>
+            <div class="price-glow"></div>
+            <div class="tier">Business</div>
+            <div class="price-amount">₹49,999<span>/mo</span></div>
+            <p class="price-desc">For growing hospitals & institutions</p>
+            <ul class="benefits">
+              <li><span class="check">✓</span> All Modules</li>
+              <li><span class="check">✓</span> Unlimited Users</li>
+              <li><span class="check">✓</span> Priority Support 24/7</li>
+              <li><span class="check">✓</span> Advanced Analytics</li>
+              <li><span class="check">✓</span> Custom Integrations</li>
+              <li><span class="check">✓</span> Dedicated Success Manager</li>
+            </ul>
+            <a class="btn btn-primary btn-glow" href="#contact">Choose Business</a>
+          </div>
+
+          <div class="price-card glass">
+            <div class="tier">Enterprise</div>
+            <div class="price-amount">Custom</div>
+            <p class="price-desc">For large-scale deployments</p>
+            <ul class="benefits">
+              <li><span class="check">✓</span> Everything in Business</li>
+              <li><span class="check">✓</span> On-Premise Option</li>
+              <li><span class="check">✓</span> Custom SLAs</li>
+              <li><span class="check">✓</span> Dedicated Infrastructure</li>
+              <li><span class="check">✓</span> White-Label Options</li>
+            </ul>
+            <a class="btn btn-outline-price" href="#contact">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TESTIMONIALS ─── -->
+    <section class="section testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Testimonials</span>
+          <h2 class="section-title">What Our<br><span class="gradient-text">Clients Say</span></h2>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card glass">
+            <div class="t-stars">★★★★★</div>
+            <p>"Droham transformed our hospital operations. The ERP is incredibly intuitive and our staff adopted it within days, not months."</p>
+            <div class="t-author">
+              <div class="t-avatar">DK</div>
+              <div>
+                <div class="t-name">Dr. Kapoor</div>
+                <div class="t-role">CTO, Metro Hospitals</div>
+              </div>
             </div>
-            <div class="price glass popular pro-3d">
-              <div class="badge">Most Popular</div>
-              <div class="tier">Business</div>
-              <div class="amount">$499<span>/mo</span></div>
-              <ul class="benefits"><li>All modules</li><li>Priority support</li></ul>
-              <button class="btn btn-primary">Choose</button>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="t-stars">★★★★★</div>
+            <p>"The pathology module cut our reporting time by 60%. Integration with our existing lab equipment was seamless."</p>
+            <div class="t-author">
+              <div class="t-avatar">RS</div>
+              <div>
+                <div class="t-name">Dr. Sharma</div>
+                <div class="t-role">Director, City Diagnostics</div>
+              </div>
             </div>
-            <div class="price glass">
-              <div class="tier">Enterprise</div>
-              <div class="amount">Custom</div>
-              <ul class="benefits"><li>Custom SLAs</li><li>Dedicated support</li></ul>
-              <button class="btn btn-outline">Contact Sales</button>
+          </div>
+          <div class="testimonial-card glass">
+            <div class="t-stars">★★★★★</div>
+            <p>"We manage 15,000+ students across 3 campuses with Droham's college ERP. The automation saved us lakhs annually."</p>
+            <div class="t-author">
+              <div class="t-avatar">AP</div>
+              <div>
+                <div class="t-name">Prof. Patel</div>
+                <div class="t-role">Registrar, National University</div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- CTA -->
-      <section class="section cta-hero">
-        <div class="container cta-frame">
-          <div class="cta-copy">
-            <h2>Ready to Build the Future of Operations?</h2>
-            <p>Book a demo and see why decision-makers trust Droham.</p>
-          </div>
-          <div>
-            <a class="btn btn-primary btn-cta" href="#contact">Request Demo</a>
-          </div>
+    <!-- ─── CTA ─── -->
+    <section class="section cta-section">
+      <div class="cta-glow-1"></div>
+      <div class="cta-glow-2"></div>
+      <div class="container cta-inner">
+        <h2 class="cta-title">Ready to Build the<br><span class="gradient-text">Future of Operations?</span></h2>
+        <p class="cta-lead">Join 500+ organizations already running on Droham. Book a personalized demo and see the difference.</p>
+        <div class="cta-btns">
+          <a class="btn btn-primary btn-glow btn-lg" href="#contact">Request Demo <span class="btn-arrow">→</span></a>
+          <a class="btn btn-secondary btn-lg" href="#pricing">View Pricing</a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <footer id="contact" class="site-footer">
-        <div class="container footer-grid">
-          <div class="footer-col">
-            <h3>Droham Private Limited</h3>
-            <p class="muted">Enterprise ERP solutions for hospitals, labs and institutions.</p>
+    <!-- ─── FOOTER ─── -->
+    <footer id="contact" class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-grid">
+          <div class="footer-col footer-brand">
+            <a class="brand" href="#">
+              <span class="brand-icon">◆</span> Droham
+            </a>
+            <p class="footer-desc">Enterprise ERP solutions for hospitals, pathology labs, colleges and institutions. Built in India, for the world.</p>
+            <div class="socials">
+              <a href="#" aria-label="Twitter" class="social-link">𝕏</a>
+              <a href="#" aria-label="LinkedIn" class="social-link">in</a>
+              <a href="#" aria-label="GitHub" class="social-link">GH</a>
+            </div>
           </div>
           <div class="footer-col">
             <h4>Products</h4>
-            <ul><li><a href="#">Pathology</a></li><li><a href="#">Hospital</a></li><li><a href="#">College</a></li><li><a href="#">Custom ERP</a></li></ul>
+            <ul>
+              <li><a href="#modules">Pathology ERP</a></li>
+              <li><a href="#modules">Hospital ERP</a></li>
+              <li><a href="#modules">College ERP</a></li>
+              <li><a href="#modules">Custom ERP</a></li>
+            </ul>
           </div>
           <div class="footer-col">
             <h4>Company</h4>
-            <ul><li><a href="#">About</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Press Kit</a></li>
+            </ul>
           </div>
           <div class="footer-col">
             <h4>Contact</h4>
-            <p class="muted">hello@droham.com<br/>+1 (555) 123-4567</p>
-            <div class="socials"><a aria-label="twitter">T</a><a aria-label="linkedin">in</a></div>
+            <ul>
+              <li><a href="mailto:hello@droham.com">hello@droham.com</a></li>
+              <li><a href="tel:+911234567890">+91 12345 67890</a></li>
+              <li><a href="#">Support Center</a></li>
+              <li><a href="#">Documentation</a></li>
+            </ul>
           </div>
         </div>
-        <div class="container footer-bottom">© <span id="year"></span> Droham Private Limited. All rights reserved.</div>
-      </footer>
-    </main>
-  </body>
-  </html>
+        <div class="footer-bottom">
+          <p>© <span id="year"></span> Droham Private Limited. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
