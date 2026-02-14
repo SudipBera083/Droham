@@ -1,499 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Droham Private Limited — Next-Gen Enterprise ERP Solutions</title>
-  <meta name="description" content="Droham Private Limited provides enterprise-grade ERP solutions for hospitals, pathology labs, colleges, and custom businesses. Scalable, secure, and built for the future.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Droham — The Future of Enterprise ERP</title>
+  <meta name="description"
+    content="Next-gen ERP for hospitals, colleges, and custom enterprises. Built for 2030 standards.">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="./src/style/style.css">
   <script defer src="./src/script/script.js"></script>
 </head>
-<body>
-  <!-- Animated mesh gradient background -->
-  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
 
-  <!-- ─── HEADER / NAV ─── -->
-  <header class="site-header" id="site-header">
-    <div class="container nav-container">
-      <a class="brand" href="#">
-        <span class="brand-icon">◆</span> Droham
+<body>
+
+  <!-- Canvas Background -->
+  <canvas id="particle-canvas"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.6; pointer-events: none;"></canvas>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="container nav-grid">
+      <a href="#" class="brand">
+        <div class="brand-logo">D</div>
+        <span>Droham</span>
       </a>
-      <nav class="main-nav" id="main-nav" aria-label="Primary">
-        <ul>
-          <li class="has-dropdown">
-            <button class="dropdown-toggle" aria-expanded="false">Products <span class="chevron">▾</span></button>
-            <ul class="dropdown" role="menu">
-              <li><a href="#modules"><span class="dd-icon">🔬</span> Pathology Management</a></li>
-              <li><a href="#modules"><span class="dd-icon">🏥</span> Hospital Management</a></li>
-              <li><a href="#modules"><span class="dd-icon">🎓</span> College Management</a></li>
-              <li><a href="#modules"><span class="dd-icon">⚙️</span> Custom ERP</a></li>
-            </ul>
-          </li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#stats">About</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+      <nav class="nav-links">
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#features" class="nav-link">Platform</a>
+        <a href="#company" class="nav-link">Company</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-ghost" href="#contact">Request Demo</a>
-        <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
+        <a href="#demo" class="btn btn-glass">Log In</a>
+        <a href="#demo" class="btn btn-primary btn-glow">Get Demo</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- ─── HERO ─── -->
-    <section class="hero section" id="home">
-      <div class="hero-glow"></div>
-      <div class="hero-glow-2"></div>
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <div class="hero-badge anim-fade-up">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="aurora-bg"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge-pill">
             <span class="badge-dot"></span>
-            Now serving 500+ organizations across India
+            Updates v3.0 Live
           </div>
-          <h1 class="hero-headline anim-fade-up anim-d1">
-            Enterprise ERP,<br>
-            <span class="gradient-text">Reimagined</span> for the Future
-          </h1>
-          <p class="hero-lead anim-fade-up anim-d2">
-            Scalable, secure ERP for hospitals, pathology labs, colleges and complex enterprises — built to scale from pilot to nation-wide deployments.
+          <h1 class="display-text typewriter-text" data-text="Build Faster.<br>Scale Smarter."></h1>
+          <p
+            style="font-size: 1.125rem; color: var(--text-secondary); margin: 24px 0 40px; max-width: 480px; line-height: 1.7;">
+            The all-in-one ERP platform designed for modern enterprises. Seamlessly integrate hospitals, labs, and
+            educational institutions with <span style="color: white; font-weight: 500;">zero friction</span>.
           </p>
-          <div class="hero-ctas anim-fade-up anim-d3">
-            <a class="btn btn-primary btn-glow" href="#pricing">
-              Get Started
-              <span class="btn-arrow">→</span>
-            </a>
-            <a class="btn btn-secondary" href="#contact">
-              <span class="play-icon">▶</span> Watch Demo
-            </a>
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary btn-glow">Start Building</a>
+            <a href="#" class="btn btn-glass">Documentation</a>
           </div>
-          <div class="hero-trust anim-fade-up anim-d4">
-            <div class="trust-item"><span class="trust-num">99.9%</span> Uptime</div>
-            <div class="trust-divider"></div>
-            <div class="trust-item"><span class="trust-num">24/7</span> Support</div>
-            <div class="trust-divider"></div>
-            <div class="trust-item"><span class="trust-num">500+</span> Organizations</div>
+          <div style="margin-top: 48px; display: flex; align-items: center; gap: 16px;">
+            <div style="display: flex;">
+              <img src="https://ui-avatars.com/api/?name=A&background=random"
+                style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--bg-void); margin-right: -10px;">
+              <img src="https://ui-avatars.com/api/?name=B&background=random"
+                style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--bg-void); margin-right: -10px;">
+              <img src="https://ui-avatars.com/api/?name=C&background=random"
+                style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--bg-void);">
+            </div>
+            <span style="font-size: 0.9rem; color: var(--text-muted);">Trusted by <strong
+                style="color: white;">500+</strong> teams</span>
           </div>
         </div>
 
-        <!-- 3D Dashboard Mockup -->
-        <div class="hero-visual anim-fade-up anim-d2" id="hero-visual">
-          <div class="floating-scene" id="tilt-scene">
-            <div class="glow-orb"></div>
-            <div class="glow-orb-2"></div>
-            <div class="dashboard-3d">
-              <div class="dash-topbar">
-                <div class="dash-dots"><span></span><span></span><span></span></div>
-                <div class="dash-url">dashboard.droham.com</div>
-              </div>
-              <div class="dash-sidebar">
-                <div class="sb-item active"></div>
-                <div class="sb-item"></div>
-                <div class="sb-item"></div>
-                <div class="sb-item"></div>
-                <div class="sb-item"></div>
-              </div>
-              <div class="dash-content">
-                <div class="dash-kpis">
-                  <div class="dash-kpi">
-                    <div class="kpi-label">Active Users</div>
-                    <div class="kpi-val">1,238</div>
-                    <div class="kpi-bar"><span style="width:78%"></span></div>
-                  </div>
-                  <div class="dash-kpi">
-                    <div class="kpi-label">Hospitals</div>
-                    <div class="kpi-val">24</div>
-                    <div class="kpi-bar"><span style="width:60%"></span></div>
-                  </div>
-                  <div class="dash-kpi">
-                    <div class="kpi-label">Tx Today</div>
-                    <div class="kpi-val">4.5k</div>
-                    <div class="kpi-bar"><span style="width:92%"></span></div>
+        <div class="hero-visual" id="hero-tilt">
+          <div class="dashboard-card">
+            <div class="dash-header">
+              <div class="dash-dot red"></div>
+              <div class="dash-dot yellow"></div>
+              <div class="dash-dot green"></div>
+              <div style="margin-left: auto; font-size: 10px; opacity: 0.5;">dashboard.droham.com</div>
+            </div>
+            <div class="dash-body">
+              <div style="display: flex; gap: 20px;">
+                <div
+                  style="width: 200px; padding: 16px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                  <div style="font-size: 12px; margin-bottom: 8px;">Total Revenue</div>
+                  <div style="font-size: 24px; color: white; font-weight: 700;">$124,500</div>
+                  <div style="height: 4px; width: 100%; background: #333; margin-top: 12px; border-radius: 2px;">
+                    <div style="height: 100%; width: 70%; background: var(--accent-primary); border-radius: 2px;"></div>
                   </div>
                 </div>
-                <div class="dash-chart">
-                  <svg viewBox="0 0 300 80" preserveAspectRatio="none">
-                    <defs>
-                      <linearGradient id="chart-grad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="rgba(99,102,241,0.3)" />
-                        <stop offset="100%" stop-color="rgba(99,102,241,0)" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M0 60 Q30 40 60 50 Q90 60 120 35 Q150 10 180 25 Q210 40 240 20 Q270 5 300 15 V80 H0 Z" fill="url(#chart-grad)" />
-                    <path d="M0 60 Q30 40 60 50 Q90 60 120 35 Q150 10 180 25 Q210 40 240 20 Q270 5 300 15" fill="none" stroke="rgba(99,102,241,0.8)" stroke-width="2" />
-                  </svg>
+                <div
+                  style="flex: 1; padding: 16px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                  <div style="font-size: 12px; margin-bottom: 8px;">Active Sessions</div>
+                  <div style="display: flex; align-items: flex-end; height: 60px; gap: 4px;">
+                    <div style="flex: 1; background: var(--accent-violet); height: 40%; opacity: 0.4;"></div>
+                    <div style="flex: 1; background: var(--accent-violet); height: 70%; opacity: 0.6;"></div>
+                    <div style="flex: 1; background: var(--accent-violet); height: 50%; opacity: 0.5;"></div>
+                    <div style="flex: 1; background: var(--accent-violet); height: 90%;"></div>
+                    <div style="flex: 1; background: var(--accent-violet); height: 60%; opacity: 0.7;"></div>
+                  </div>
                 </div>
               </div>
             </div>
-            <!-- Floating chips -->
-            <div class="float-chip chip-a">
-              <span class="chip-icon">📊</span> Lab Results Ready
-            </div>
-            <div class="float-chip chip-b">
-              <span class="chip-icon">✅</span> 12 Admissions
-            </div>
-            <div class="float-chip chip-c">
-              <span class="chip-icon">💰</span> ₹2.4L Revenue
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Scroll indicator -->
-      <div class="scroll-indicator">
-        <div class="scroll-mouse"><div class="scroll-dot"></div></div>
-      </div>
-    </section>
-
-    <!-- ─── LOGOS / SOCIAL PROOF ─── -->
-    <section class="section logos-section">
-      <div class="container">
-        <p class="logos-label">Trusted by leading institutions across India</p>
-        <div class="logos-track">
-          <div class="logo-item">Apollo Hospitals</div>
-          <div class="logo-item">Max Healthcare</div>
-          <div class="logo-item">Fortis</div>
-          <div class="logo-item">Manipal University</div>
-          <div class="logo-item">SRL Diagnostics</div>
-          <div class="logo-item">Medanta</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── 3D MODULE CARDS ─── -->
-    <section id="modules" class="section modules-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Our Modules</span>
-          <h2 class="section-title">Powerful ERP Modules<br><span class="gradient-text">Built for Every Industry</span></h2>
-          <p class="section-sub">Each module is a complete, standalone system — or combine them for a unified enterprise platform.</p>
-        </div>
-        <div class="modules-grid">
-          <div class="module-card" data-tilt>
-            <div class="card-glow"></div>
-            <div class="m-icon-wrap">
-              <svg class="m-icon-svg" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="url(#g1)" opacity="0.15"/><path d="M16 32V20l8-6 8 6v12" stroke="url(#g1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 32v-6h8v6" stroke="url(#g1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g1" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#818cf8"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs></svg>
-            </div>
-            <div class="m-emoji">🔬</div>
-            <h3>Pathology Management</h3>
-            <p>Complete lab workflows — LIS integration, automated reporting, sample tracking, and billing. NABL-ready compliance.</p>
-            <a class="card-link" href="#">Learn more →</a>
-          </div>
-
-          <div class="module-card featured" data-tilt>
-            <div class="card-glow"></div>
-            <span class="card-badge">Most Popular</span>
-            <div class="m-emoji">🏥</div>
-            <h3>Hospital Management</h3>
-            <p>End-to-end hospital operations — OPD/IPD, scheduling, inventory, pharmacy, finance, and HR management.</p>
-            <a class="card-link" href="#">Learn more →</a>
-          </div>
-
-          <div class="module-card" data-tilt>
-            <div class="card-glow"></div>
-            <div class="m-emoji">🎓</div>
-            <h3>College Management</h3>
-            <p>Admissions, attendance, exam management, fee collection, library, and hostel — all in one platform.</p>
-            <a class="card-link" href="#">Learn more →</a>
-          </div>
-
-          <div class="module-card" data-tilt>
-            <div class="card-glow"></div>
-            <div class="m-emoji">⚙️</div>
-            <h3>Custom Enterprise ERP</h3>
-            <p>Tailored solutions for unique business processes — custom workflows, integrations, APIs, and dedicated SLAs.</p>
-            <a class="card-link" href="#">Learn more →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── FEATURES ─── -->
-    <section id="features" class="section features-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Platform</span>
-          <h2 class="section-title">Enterprise-Grade<br><span class="gradient-text">Platform Features</span></h2>
-          <p class="section-sub">Built on modern cloud infrastructure with security, scalability, and performance at its core.</p>
-        </div>
-        <!-- Animated connecting lines -->
-        <div class="features-stage">
-          <svg class="features-lines" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
-            <path class="line-path" d="M100 200 C300 50,500 350,700 150 S1000 300,1100 100" />
-            <path class="line-path line-path-2" d="M50 300 C250 100,450 350,650 200 S900 50,1150 250" />
-          </svg>
-          <div class="features-grid">
-            <div class="feature-card">
-              <div class="f-icon">🏗️</div>
-              <h4>Scalable Architecture</h4>
-              <p>Multi-tenant, cloud-native infrastructure. Auto-scales from 10 to 10,000+ concurrent users.</p>
-            </div>
-            <div class="feature-card">
-              <div class="f-icon">🔒</div>
-              <h4>Enterprise Security</h4>
-              <p>SSO, RBAC, end-to-end encryption, audit trails, and HIPAA-ready compliance frameworks.</p>
-            </div>
-            <div class="feature-card">
-              <div class="f-icon">📊</div>
-              <h4>Real-Time Analytics</h4>
-              <p>Live dashboards, predictive insights, automated alerts, and custom report builder.</p>
-            </div>
-            <div class="feature-card">
-              <div class="f-icon">🔄</div>
-              <h4>Custom Workflows</h4>
-              <p>Visual drag-and-drop workflow builder. Automate approvals, notifications, and processes.</p>
-            </div>
-            <div class="feature-card">
-              <div class="f-icon">🔌</div>
-              <h4>API-First Design</h4>
-              <p>RESTful APIs for everything. Integrate with payment gateways, labs, and third-party systems.</p>
-            </div>
-            <div class="feature-card">
-              <div class="f-icon">📱</div>
-              <h4>Mobile Ready</h4>
-              <p>Responsive web app + native mobile apps for iOS and Android. Works offline.</p>
+            <!-- Floating Element -->
+            <div
+              style="position: absolute; bottom: -20px; right: -20px; background: var(--bg-elevated); padding: 12px 20px; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 10px; animation: float 4s ease-in-out infinite;">
+              <div style="width: 8px; height: 8px; background: #22c55e; border-radius: 50%;"></div>
+              <span style="font-size: 0.85rem; font-weight: 600;">System Optimal</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── STATS ─── -->
-    <section id="stats" class="section stats-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Impact</span>
-          <h2 class="section-title">Numbers That<br><span class="gradient-text">Speak for Themselves</span></h2>
+    <!-- Stats Section -->
+    <div class="stats-strip">
+      <div class="container stats-flex">
+        <div class="stat-item">
+          <div class="stat-num counter" data-target="99.9">0</div>
+          <div class="stat-label">% Uptime</div>
         </div>
-        <div class="stats-grid">
-          <div class="stat-card glass">
-            <div class="stat-glow"></div>
-            <div class="stat-num" data-count="99.9" data-suffix="%">0</div>
-            <div class="stat-label">Uptime Guarantee</div>
+        <div class="stat-item">
+          <div class="stat-num counter" data-target="150" data-suffix="+">0</div>
+          <div class="stat-label">Integrations</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num counter" data-target="24" data-suffix="/7">0</div>
+          <div class="stat-label">Expert Support</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num counter" data-target="500" data-suffix="k">0</div>
+          <div class="stat-label">Daily Events</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products / Bento Grid -->
+    <section id="products" class="section">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 60px;">
+          <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 16px;">Intelligent Modules.</h2>
+          <p style="color: var(--text-secondary);">Everything you need to run your institution. Integrated, powerful,
+            and built for scale.</p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Feature 1 -->
+          <div class="glass-panel bento-item span-2">
+            <div class="spotlight"></div>
+            <div style="position: absolute; top: 30px; right: 30px; font-size: 2rem;">🧬</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 12px; position: relative;">Pathology LIS</h3>
+            <p style="color: var(--text-secondary); position: relative;">Automated sample tracking, report generation,
+              and machine interfacing. Reduce report turnaround time by 40%.</p>
           </div>
-          <div class="stat-card glass">
-            <div class="stat-glow"></div>
-            <div class="stat-num" data-count="500" data-suffix="+">0</div>
-            <div class="stat-label">Organizations</div>
+
+          <!-- Feature 2 -->
+          <div class="glass-panel bento-item">
+            <div class="spotlight"></div>
+            <div style="position: absolute; top: 30px; right: 30px; font-size: 2rem;">🏥</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 12px; position: relative;">Hospital HMS</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; position: relative;">Complete patient lifecycle
+              management from OPD to discharge.</p>
           </div>
-          <div class="stat-card glass">
-            <div class="stat-glow"></div>
-            <div class="stat-num" data-count="50000" data-suffix="+">0</div>
-            <div class="stat-label">Active Users</div>
+
+          <!-- Feature 3 -->
+          <div class="glass-panel bento-item">
+            <div class="spotlight"></div>
+            <div style="position: absolute; top: 30px; right: 30px; font-size: 2rem;">🎓</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 12px; position: relative;">Campus Edu</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; position: relative;">Digital campus solution for
+              universities and colleges.</p>
           </div>
-          <div class="stat-card glass">
-            <div class="stat-glow"></div>
-            <div class="stat-num" data-count="15" data-suffix="M+">0</div>
-            <div class="stat-label">Transactions Processed</div>
+
+          <!-- Feature 4 -->
+          <div class="glass-panel bento-item span-2">
+            <div class="spotlight"></div>
+            <div style="position: absolute; top: 30px; right: 30px; font-size: 2rem;">⚡</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 12px; position: relative;">Real-time Analytics</h3>
+            <p style="color: var(--text-secondary); position: relative;">Live dashboards for financial, operational, and
+              clinical metrics. Make data-driven decisions instantly.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── HOW IT WORKS ─── -->
-    <section class="section how-section">
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
       <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Process</span>
-          <h2 class="section-title">Get Started in<br><span class="gradient-text">Three Simple Steps</span></h2>
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 60px;">
+          <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 16px;">Simple Pricing.</h2>
+          <p style="color: var(--text-secondary);">Start small and scale as you grow. Transparent costs, no hidden fees.
+          </p>
         </div>
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-num">01</div>
-            <h4>Choose Your Modules</h4>
-            <p>Select from our range of ERP modules or go for a complete enterprise suite.</p>
-          </div>
-          <div class="step-connector"><svg viewBox="0 0 100 20"><path d="M0 10 L90 10" stroke="rgba(99,102,241,0.3)" stroke-width="2" stroke-dasharray="6,4"/><polygon points="90,5 100,10 90,15" fill="rgba(99,102,241,0.3)"/></svg></div>
-          <div class="step-card">
-            <div class="step-num">02</div>
-            <h4>Configure & Deploy</h4>
-            <p>Our team configures your instance, migrates data, and deploys in under 48 hours.</p>
-          </div>
-          <div class="step-connector"><svg viewBox="0 0 100 20"><path d="M0 10 L90 10" stroke="rgba(99,102,241,0.3)" stroke-width="2" stroke-dasharray="6,4"/><polygon points="90,5 100,10 90,15" fill="rgba(99,102,241,0.3)"/></svg></div>
-          <div class="step-card">
-            <div class="step-num">03</div>
-            <h4>Scale & Grow</h4>
-            <p>Go live with full support. Scale from one location to hundreds as you grow.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ─── PRICING ─── -->
-    <section id="pricing" class="section pricing-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Pricing</span>
-          <h2 class="section-title">Simple, Transparent<br><span class="gradient-text">Pricing</span></h2>
-          <p class="section-sub">Start small, scale big. No hidden fees, no surprises.</p>
-        </div>
-        <div class="pricing-grid">
-          <div class="price-card glass">
-            <div class="tier">Starter</div>
-            <div class="price-amount">₹9,999<span>/mo</span></div>
-            <p class="price-desc">Perfect for small clinics and labs</p>
-            <ul class="benefits">
-              <li><span class="check">✓</span> 1 Core Module</li>
-              <li><span class="check">✓</span> Up to 50 Users</li>
-              <li><span class="check">✓</span> Email Support</li>
-              <li><span class="check">✓</span> Basic Analytics</li>
-              <li><span class="check dim">✓</span> Standard SLA</li>
-            </ul>
-            <a class="btn btn-outline-price" href="#contact">Get Started</a>
-          </div>
-
-          <div class="price-card glass featured-price" data-tilt>
-            <div class="price-badge">Most Popular</div>
-            <div class="price-glow"></div>
-            <div class="tier">Business</div>
-            <div class="price-amount">₹49,999<span>/mo</span></div>
-            <p class="price-desc">For growing hospitals & institutions</p>
-            <ul class="benefits">
-              <li><span class="check">✓</span> All Modules</li>
-              <li><span class="check">✓</span> Unlimited Users</li>
-              <li><span class="check">✓</span> Priority Support 24/7</li>
-              <li><span class="check">✓</span> Advanced Analytics</li>
-              <li><span class="check">✓</span> Custom Integrations</li>
-              <li><span class="check">✓</span> Dedicated Success Manager</li>
-            </ul>
-            <a class="btn btn-primary btn-glow" href="#contact">Choose Business</a>
-          </div>
-
-          <div class="price-card glass">
-            <div class="tier">Enterprise</div>
-            <div class="price-amount">Custom</div>
-            <p class="price-desc">For large-scale deployments</p>
-            <ul class="benefits">
-              <li><span class="check">✓</span> Everything in Business</li>
-              <li><span class="check">✓</span> On-Premise Option</li>
-              <li><span class="check">✓</span> Custom SLAs</li>
-              <li><span class="check">✓</span> Dedicated Infrastructure</li>
-              <li><span class="check">✓</span> White-Label Options</li>
-            </ul>
-            <a class="btn btn-outline-price" href="#contact">Contact Sales</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── TESTIMONIALS ─── -->
-    <section class="section testimonials-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Testimonials</span>
-          <h2 class="section-title">What Our<br><span class="gradient-text">Clients Say</span></h2>
-        </div>
-        <div class="testimonials-grid">
-          <div class="testimonial-card glass">
-            <div class="t-stars">★★★★★</div>
-            <p>"Droham transformed our hospital operations. The ERP is incredibly intuitive and our staff adopted it within days, not months."</p>
-            <div class="t-author">
-              <div class="t-avatar">DK</div>
-              <div>
-                <div class="t-name">Dr. Kapoor</div>
-                <div class="t-role">CTO, Metro Hospitals</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+          <!-- Starter -->
+          <div class="glass-panel"
+            style="padding: 40px; border-radius: var(--radius-xl); display: flex; flex-direction: column;">
+            <div style="margin-bottom: 24px;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Starter</h3>
+              <div style="display: flex; align-items: baseline; gap: 4px;">
+                <span style="font-size: 2.5rem; font-weight: 700; color: white;">₹9,999</span>
+                <span style="color: var(--text-muted);">/mo</span>
               </div>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 12px;">Essential tools for small
+                clinics and labs.</p>
+            </div>
+            <ul
+              style="margin-bottom: 32px; color: var(--text-secondary); font-size: 0.95rem; display: flex; flex-direction: column; gap: 12px;">
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> 1 Core Module
+              </li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Up to 50 Users
+              </li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Basic Analytics
+              </li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Email Support
+              </li>
+            </ul>
+            <div style="margin-top: auto;">
+              <a href="#contact" class="btn btn-glass" style="width: 100%; justify-content: center;">Get Started</a>
             </div>
           </div>
-          <div class="testimonial-card glass">
-            <div class="t-stars">★★★★★</div>
-            <p>"The pathology module cut our reporting time by 60%. Integration with our existing lab equipment was seamless."</p>
-            <div class="t-author">
-              <div class="t-avatar">RS</div>
-              <div>
-                <div class="t-name">Dr. Sharma</div>
-                <div class="t-role">Director, City Diagnostics</div>
+
+          <!-- Business (Featured) -->
+          <div class="glass-panel"
+            style="padding: 40px; border-radius: var(--radius-xl); display: flex; flex-direction: column; border-color: var(--accent-primary); position: relative;">
+            <div
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -20%, rgba(99, 102, 241, 0.15), transparent 70%); pointer-events: none;">
+            </div>
+            <div
+              style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent-primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);">
+              MOST POPULAR</div>
+
+            <div style="margin-bottom: 24px;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 8px; color: var(--accent-primary);">Business</h3>
+              <div style="display: flex; align-items: baseline; gap: 4px;">
+                <span style="font-size: 2.5rem; font-weight: 700; color: white;">₹49,999</span>
+                <span style="color: var(--text-muted);">/mo</span>
               </div>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 12px;">For growing hospitals &
+                institutions.</p>
+            </div>
+            <ul
+              style="margin-bottom: 32px; color: var(--text-secondary); font-size: 0.95rem; display: flex; flex-direction: column; gap: 12px;">
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> All Modules
+                Included</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Unlimited Users
+              </li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Advanced
+                Analytics + AI</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> 24/7 Priority
+                Support</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Custom
+                Integrations</li>
+            </ul>
+            <div style="margin-top: auto;">
+              <a href="#contact" class="btn btn-primary btn-glow" style="width: 100%; justify-content: center;">Choose
+                Business</a>
             </div>
           </div>
-          <div class="testimonial-card glass">
-            <div class="t-stars">★★★★★</div>
-            <p>"We manage 15,000+ students across 3 campuses with Droham's college ERP. The automation saved us lakhs annually."</p>
-            <div class="t-author">
-              <div class="t-avatar">AP</div>
-              <div>
-                <div class="t-name">Prof. Patel</div>
-                <div class="t-role">Registrar, National University</div>
+
+          <!-- Enterprise -->
+          <div class="glass-panel"
+            style="padding: 40px; border-radius: var(--radius-xl); display: flex; flex-direction: column;">
+            <div style="margin-bottom: 24px;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Enterprise</h3>
+              <div style="display: flex; align-items: baseline; gap: 4px;">
+                <span style="font-size: 2.5rem; font-weight: 700; color: white;">Custom</span>
               </div>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 12px;">For large-scale
+                multi-premise deployments.</p>
+            </div>
+            <ul
+              style="margin-bottom: 32px; color: var(--text-secondary); font-size: 0.95rem; display: flex; flex-direction: column; gap: 12px;">
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Everything in
+                Business</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> On-Premise /
+                Private Cloud</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Dedicated
+                Infrastructure</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> Custom SLAs &
+                Contracts</li>
+              <li style="display: flex; gap: 10px;"><span style="color: var(--accent-primary);">✓</span> White-label
+                Options</li>
+            </ul>
+            <div style="margin-top: auto;">
+              <a href="#contact" class="btn btn-glass" style="width: 100%; justify-content: center;">Contact Sales</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── CTA ─── -->
-    <section class="section cta-section">
-      <div class="cta-glow-1"></div>
-      <div class="cta-glow-2"></div>
-      <div class="container cta-inner">
-        <h2 class="cta-title">Ready to Build the<br><span class="gradient-text">Future of Operations?</span></h2>
-        <p class="cta-lead">Join 500+ organizations already running on Droham. Book a personalized demo and see the difference.</p>
-        <div class="cta-btns">
-          <a class="btn btn-primary btn-glow btn-lg" href="#contact">Request Demo <span class="btn-arrow">→</span></a>
-          <a class="btn btn-secondary btn-lg" href="#pricing">View Pricing</a>
+    <!-- CTA Section -->
+    <section class="section" style="padding-bottom: 100px;">
+      <div class="container">
+        <div class="glass-panel"
+          style="padding: 80px; text-align: center; border-radius: var(--radius-xl); position: relative; overflow: hidden;">
+          <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -20%, rgba(129, 140, 248, 0.2), transparent 70%); pointer-events: none;">
+          </div>
+
+          <h2 style="font-size: 3rem; margin-bottom: 24px; position: relative;">Ready to modernize?</h2>
+          <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 40px; position: relative;">Join the
+            next generation of enterprises running on Droham. Safe, secure, and scalable.</p>
+
+          <div style="position: relative; z-index: 2;">
+            <a href="#" class="btn btn-primary btn-glow" style="padding: 16px 48px; font-size: 1.1rem;">Get Started
+              Now</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── FOOTER ─── -->
-    <footer id="contact" class="site-footer">
-      <div class="container footer-inner">
-        <div class="footer-grid">
-          <div class="footer-col footer-brand">
-            <a class="brand" href="#">
-              <span class="brand-icon">◆</span> Droham
-            </a>
-            <p class="footer-desc">Enterprise ERP solutions for hospitals, pathology labs, colleges and institutions. Built in India, for the world.</p>
-            <div class="socials">
-              <a href="#" aria-label="Twitter" class="social-link">𝕏</a>
-              <a href="#" aria-label="LinkedIn" class="social-link">in</a>
-              <a href="#" aria-label="GitHub" class="social-link">GH</a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <h4>Products</h4>
-            <ul>
-              <li><a href="#modules">Pathology ERP</a></li>
-              <li><a href="#modules">Hospital ERP</a></li>
-              <li><a href="#modules">College ERP</a></li>
-              <li><a href="#modules">Custom ERP</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Press Kit</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Contact</h4>
-            <ul>
-              <li><a href="mailto:hello@droham.com">hello@droham.com</a></li>
-              <li><a href="tel:+911234567890">+91 12345 67890</a></li>
-              <li><a href="#">Support Center</a></li>
-              <li><a href="#">Documentation</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>© <span id="year"></span> Droham Private Limited. All rights reserved.</p>
-          <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-          </div>
-        </div>
-      </div>
-    </footer>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#" class="brand" style="margin-bottom: 20px;">
+            <div class="brand-logo">D</div>
+            <span>Droham</span>
+          </a>
+          <p class="footer-desc">Building the operating system for modern enterprises. Scalable, secure, and always
+            online.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy-row">
+        <div>&copy; 2026 Droham Private Limited.</div>
+        <div style="display: flex; gap: 24px;">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
+
 </html>
