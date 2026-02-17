@@ -2,7 +2,7 @@ import React from "react";
 import BentoCard from "@/components/ui/BentoCard";
 import SectionWrapper from "@/layouts/SectionWrapper";
 import { motion } from "framer-motion";
-import { Zap, Shield, Globe, Cpu, BarChart3, Users } from "lucide-react";
+import { Zap, Shield, Globe, Cpu, BarChart3, Users, ArrowUpRight } from "lucide-react";
 import TiltContainer from "@/components/ui/TiltContainer";
 
 const features = [
@@ -11,30 +11,35 @@ const features = [
         description: "Deploy instantly to 35+ regions worldwide with edge networking and automatic failover.",
         icon: Globe,
         className: "sm:col-span-2 lg:col-span-2",
+        link: "#global-scale",
     },
     {
         title: "Real-time AI",
         description: "Built-in intelligence for predictive analytics and automation.",
         icon: Cpu,
         className: "sm:col-span-1 lg:col-span-1",
+        link: "#real-time-ai",
     },
     {
         title: "Enterprise Security",
         description: "SOC2 Type II certified with automated compliance reporting.",
         icon: Shield,
         className: "sm:col-span-1 lg:col-span-1",
+        link: "#security",
     },
     {
         title: "Instant Analytics",
         description: "Visualize data trends with zero-latency dashboards and real-time insights.",
         icon: BarChart3,
         className: "sm:col-span-2 lg:col-span-2",
+        link: "#analytics",
     },
     {
         title: "Team Collaboration",
         description: "Real-time multiplayer editing and comments built-in for seamless teamwork.",
         icon: Users,
         className: "sm:col-span-2 lg:col-span-3",
+        link: "#collaboration",
     },
 ];
 
@@ -99,7 +104,7 @@ const FeatureSection = () => {
                     <motion.div key={idx} variants={itemVariants} className={`${feature.className} preserve-3d`}>
                         <TiltContainer className="h-full" perspective={1500}>
                             {/* Re-using BentoCard structure but ensuring it plays nice with TiltContainer */}
-                            <div className="h-full group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 hover:bg-white/[0.05] transition-colors duration-500 shadow-2xl preserve-3d">
+                            <div className="h-full group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 hover:bg-white/[0.05] transition-colors duration-500 shadow-2xl preserve-3d flex flex-col justify-between">
 
                                 {/* Inner 3D Elements */}
                                 <div className="absolute top-0 right-0 p-10 opacity-20 transform translate-x-10 -translate-y-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-700 ease-out translate-z-10">
@@ -112,7 +117,18 @@ const FeatureSection = () => {
                                     </div>
 
                                     <h3 className="mb-3 text-2xl font-bold text-white group-hover:translate-x-1 transition-transform duration-300">{feature.title}</h3>
-                                    <p className="text-secondary leading-relaxed group-hover:text-gray-300 transition-colors">{feature.description}</p>
+                                    <p className="text-secondary leading-relaxed group-hover:text-gray-300 transition-colors mb-6">{feature.description}</p>
+                                </div>
+
+                                {/* Link Button */}
+                                <div className="relative z-20 translate-z-30 pt-4 mt-auto">
+                                    <a
+                                        href={feature.link}
+                                        className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-white transition-colors group/btn"
+                                    >
+                                        Learn more
+                                        <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                                    </a>
                                 </div>
 
                                 {/* Glow Effect */}
