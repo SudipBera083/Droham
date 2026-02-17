@@ -1,5 +1,5 @@
 import React from "react";
-import SectionWrapper from "@/layouts/SectionWrapper";
+import { motion } from "framer-motion";
 
 const logos = [
     "Linear", "Vercel", "Stripe", "Raycast", "Arc", "OpenAI", "Ramp", "Mercury"
@@ -7,23 +7,39 @@ const logos = [
 
 const TrustSection = () => {
     return (
-        <section className="py-12 border-y border-white/5 bg-white/[0.02]">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-                <p className="text-sm font-medium text-secondary mb-8 uppercase tracking-widest">
+        <section className="py-10 md:py-14 border-y border-white/5 bg-white/[0.01] overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="text-xs sm:text-sm font-medium text-secondary mb-6 md:mb-8 uppercase tracking-widest"
+                >
                     Trusted by innovative teams worldwide
-                </p>
+                </motion.p>
 
-                <div className="relative flex overflow-x-hidden group">
-                    <div className="animate-loop-scroll flex space-x-12 whitespace-nowrap opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                        {[...logos, ...logos, ...logos].map((logo, i) => (
-                            <span key={i} className="text-2xl font-bold font-sans text-white mx-8">
+                {/* Infinite scroll with gradient edge masks */}
+                <div className="relative flex overflow-x-hidden mask-edges group">
+                    <div className="animate-loop-scroll flex shrink-0 items-center space-x-8 sm:space-x-12 whitespace-nowrap opacity-40 group-hover:opacity-70 transition-opacity duration-700 group-hover:[animation-play-state:paused]">
+                        {[...logos, ...logos].map((logo, i) => (
+                            <span
+                                key={`a-${i}`}
+                                className="text-xl sm:text-2xl font-bold font-sans text-white/80 mx-4 sm:mx-8 select-none"
+                            >
                                 {logo}
                             </span>
                         ))}
                     </div>
-                    <div className="animate-loop-scroll flex space-x-12 whitespace-nowrap opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 aria-hidden='true'">
-                        {[...logos, ...logos, ...logos].map((logo, i) => (
-                            <span key={i} className="text-2xl font-bold font-sans text-white mx-8">
+                    <div
+                        className="animate-loop-scroll flex shrink-0 items-center space-x-8 sm:space-x-12 whitespace-nowrap opacity-40 group-hover:opacity-70 transition-opacity duration-700 group-hover:[animation-play-state:paused]"
+                        aria-hidden="true"
+                    >
+                        {[...logos, ...logos].map((logo, i) => (
+                            <span
+                                key={`b-${i}`}
+                                className="text-xl sm:text-2xl font-bold font-sans text-white/80 mx-4 sm:mx-8 select-none"
+                            >
                                 {logo}
                             </span>
                         ))}

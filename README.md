@@ -1,131 +1,168 @@
-# 💎 Droham: Next-Gen ERP Platform
+<div align="center">
 
-[![React](https://img.shields.io/badge/React-19-blue?logo=react)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-6.0-purple?logo=vite)](https://vitejs.dev)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-cyan?logo=tailwindcss)](https://tailwindcss.com)
-[![Three.js](https://img.shields.io/badge/Three.js-R3F-black?logo=three.js)](https://docs.pmnd.rs/react-three-fiber)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11.0-pink?logo=framer)](https://www.framer.com/motion/)
+# Droham
 
-> **The future of enterprise software, reimagined.**
-> 
-> A high-performance, visually stunning SaaS landing page built for **Droham Private Limited**. Designed to convey premium quality, trust, and massive scale.
+### Next-Generation Enterprise Resource Planning
 
----
+[![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react&logoColor=white)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-E836B5?logo=framer&logoColor=white)](https://motion.dev)
+[![Deployed on Vercel](https://img.shields.io/badge/Vercel-Deployed-000?logo=vercel&logoColor=white)](https://vercel.com)
 
-## 🚀 Key Features
+**Limitless Performance. Precision Engineering.**
 
-### 🎨 Visual Excellence
-- **Cinematic 3D Hero**: Built with React Three Fiber, featuring physical glass materials (`MeshTransmissionMaterial`), bloom, noise, and vignette post-processing.
-- **Glassmorphism 2.0**: Accurate frosted glass effects using backdrop filters and border gradients.
-- **Premium Fluid Motion**: Powered by **Lenis** for ultra-smooth, luxurious scroll physics.
-- **Interactive UI**: Bento grids, tilt-effect pricing cards, and magnetic button interactions.
+A high-performance SaaS landing page for [Droham Private Limited](https://github.com/SudipBera083/Droham) — featuring CSS-only 3D animations, buttery-smooth scrolling, and fully responsive design across all devices.
 
-### ⚡ Performance & Tech
-- **Tailwind CSS v4**: Bleeding-edge CSS-first configuration for zero-runtime overhead.
-- **Vite Powered**: Instant HMR and optimized production builds.
-- **Code Splitting**: Dynamic imports for heavy 3D assets to ensure fast initial loads.
-- **Responsive**: Fully fluid design that adapts from mobile to 4K displays.
+</div>
 
 ---
 
-## 🛠️ Tech Stack
+## ✦ Highlights
 
-| Category | Technology | Purpose |
-| :--- | :--- | :--- |
-| **Core** | React 19, Vite | Foundation & Build Tool |
-| **Styling** | Tailwind CSS v4 | Utility-first Design System |
-| **3D Engine** | @react-three/fiber | Declarative Three.js Scene |
-| **Post-Processing** | @react-three/postprocessing | Bloom, DOF, Noise Effects |
-| **Animation** | Framer Motion | Complex UI Transitions |
-| **Scroll** | Lenis | Smooth Scroll Handling |
-| **Icons** | Lucide React | Modern SVG Icon Set |
+| | Feature | Details |
+|---|---|---|
+| 🎯 | **CSS 3D Animations** | Perspective transforms, preserve-3d depth layers, spring-physics tilt cards — zero WebGL, pure CSS + Framer Motion |
+| 🧈 | **Ultra-Smooth Scroll** | Lenis smooth scroll engine with tuned interpolation (`lerp: 0.08`) and per-device multipliers |
+| 📱 | **Fully Responsive** | Fluid typography via `clamp()`, adaptive grids (1→2→3 cols), full-screen mobile nav overlay |
+| ♿ | **Accessible** | `prefers-reduced-motion` support, semantic HTML, 44px+ touch targets, `aria-hidden` on decorative elements |
+| ⚡ | **Performant** | GPU-accelerated transforms, `will-change` optimization, 115KB gzipped production bundle |
 
 ---
 
-## 📦 Getting Started
+## ✦ Tech Stack
 
-### Prerequisites
-- Node.js 18+
-- npm / yarn / pnpm
-
-### Installation
-
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/SudipBera083/Droham.git
-    cd Droham/react_v2.0/core
-    ```
-
-2.  **Install dependencies**
-    ```bash
-    npm install
-    # Note: Requires @tailwindcss/postcss for v4 compatibility
-    ```
-
-3.  **Start Development Server**
-    ```bash
-    npm run dev
-    # Server will start at http://localhost:5173
-    ```
-
-4.  **Build for Production**
-    ```bash
-    npm run build
-    # optimises assets and generates dist/ folder
-    ```
+| Layer | Technology | Role |
+|:---|:---|:---|
+| **Framework** | React 19.2 | Component architecture |
+| **Build** | Vite 7.3 | Development server & bundler |
+| **Styling** | Tailwind CSS 4.1 | Utility-first design system |
+| **Animation** | Framer Motion 12 | Scroll reveals, spring physics, variants |
+| **Scroll** | Lenis 1.3 | Smooth scroll engine |
+| **Icons** | Lucide React | Consistent SVG icon set |
+| **Utilities** | clsx, tailwind-merge | Conditional class composition |
 
 ---
 
-## 📂 Project Structure
+## ✦ Architecture
 
-```bash
+```
 src/
-├── components/         # Reusable UI components
-│   ├── ui/            # Primitive components (Buttons, Cards)
-│   └── Hero3D.jsx     # The main 3D scene
-├── sections/           # Landing page sections
-│   ├── FeatureSection.jsx # Bento grid
-│   ├── PricingSection.jsx # 3D Cards
-│   └── CTASection.jsx     # Cinematic footer
-├── layouts/            # Page wrappers (MainLayout with Lenis)
-├── assets/             # Static images/fonts
-└── index.css           # Global styles & Tailwind v4 Theme
+├── components/
+│   ├── Navbar.jsx              # Fixed nav with mobile overlay & scroll detection
+│   └── ui/
+│       └── BentoCard.jsx       # 3D tilt card with spring physics
+├── sections/
+│   ├── HeroSection.jsx         # 3D floating dashboard + mouse parallax
+│   ├── TrustSection.jsx        # Infinite logo scroll with edge masks
+│   ├── FeatureSection.jsx      # Staggered bento grid
+│   ├── PricingSection.jsx      # 3D hover pricing cards
+│   └── CTASection.jsx          # Orbiting spheres + glassmorphic CTA
+├── layouts/
+│   ├── MainLayout.jsx          # Lenis provider + responsive footer
+│   └── SectionWrapper.jsx      # Scroll-triggered reveal wrapper
+├── index.css                   # Design tokens, 3D keyframes, fluid utilities
+├── App.jsx                     # Page composition
+└── main.jsx                    # Entry point
 ```
 
 ---
 
-## 🎨 Customization Guide
+## ✦ Getting Started
 
-### colors & Theme
-The project uses **Tailwind v4 CSS variables** for theming.
-Edit `src/index.css` to modify the design system:
+### Prerequisites
+
+- **Node.js** 18+ &nbsp;·&nbsp; **npm** 9+
+
+### Quick Start
+
+```bash
+# Clone
+git clone https://github.com/SudipBera083/Droham.git
+cd Droham/react_v2.0/core
+
+# Install
+npm install
+
+# Develop
+npm run dev
+# → http://localhost:5173
+
+# Build
+npm run build
+# → Optimized output in dist/
+```
+
+---
+
+## ✦ Customization
+
+### Theme & Colors
+
+All design tokens are defined in `src/index.css` using Tailwind v4 CSS variables:
 
 ```css
 @theme {
-  /* Change brand color */
-  --color-accent: #5E6AD2; 
-  
-  /* Adjust Animation Speed */
-  --animate-float: float 8s ease-in-out infinite;
+  --color-accent: #5E6AD2;      /* Brand color */
+  --color-background: #030305;  /* Page background */
+  --color-surface: #0A0A0C;     /* Card surfaces */
+  --color-secondary: #A1A1AA;   /* Muted text */
 }
 ```
 
 ### 3D Effects
-To tweak the 3D scene, open `src/components/Hero3D.jsx`:
-- **Bloom**: Adjust `intensity` in `<Bloom />`.
-- **Glass**: Modify `roughness` and `transmission` in `<MeshTransmissionMaterial />`.
+
+The 3D system uses pure CSS — no external 3D libraries:
+
+- **Perspective containers** → `perspective-1000`, `perspective-1500`, `perspective-2000`
+- **Depth layers** → `preserve-3d` + `translateZ()` on child elements
+- **Interactive tilt** → Spring-animated `rotateX/rotateY` via Framer Motion
+- **Orbital animation** → `@keyframes orbit` with `rotateX(70deg) rotateZ()`
+
+### Smooth Scroll
+
+Lenis config lives in `MainLayout.jsx`:
+
+```jsx
+<ReactLenis root options={{
+  lerp: 0.08,          // Interpolation smoothness
+  duration: 1.4,       // Scroll duration
+  wheelMultiplier: 0.8, // Desktop scroll speed
+  touchMultiplier: 1.5, // Mobile touch sensitivity
+}} />
+```
 
 ---
 
-## 🚢 Deployment
+## ✦ Deployment
 
-The project is ready for **Vercel** or **Netlify**.
+Production-ready for **Vercel**, **Netlify**, or any static hosting.
 
-**Vercel/Netlify Build Settings:**
-- **Build Command:** `npm run build`
-- **Output Directory:** `dist`
+| Setting | Value |
+|:---|:---|
+| Build Command | `npm run build` |
+| Output Directory | `dist` |
+| Node Version | 18+ |
+
+A `vercel.json` is included for SPA routing support.
 
 ---
 
-© 2026 Droham Private Limited. All rights reserved.
-Built with ❤️ by Antigravity.
+## ✦ Scripts
+
+| Command | Description |
+|:---|:---|
+| `npm run dev` | Start development server with HMR |
+| `npm run build` | Create optimized production build |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint checks |
+
+---
+
+<div align="center">
+
+**Droham Private Limited** · © 2026
+
+Built with precision by the Droham engineering team.
+
+</div>
