@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import clsx from "clsx";
+import logo from "@/assets/logo/logo.png";
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -22,7 +23,9 @@ const Navbar = () => {
         } else {
             document.body.style.overflow = "";
         }
-        return () => { document.body.style.overflow = ""; };
+        return () => {
+            document.body.style.overflow = "";
+        };
     }, [mobileMenuOpen]);
 
     const navLinks = [
@@ -50,17 +53,44 @@ const Navbar = () => {
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b",
                 scrolled
                     ? "bg-background/80 backdrop-blur-xl border-white/5 py-3"
-                    : "bg-transparent border-transparent py-4 md:py-5"
+                    : "bg-transparent border-transparent py-4 md:py-5",
             )}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
                 {/* Logo */}
-                <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-gradient-to-tr from-accent to-purple-500 rounded-lg flex items-center justify-center shadow-lg shadow-accent/20">
-                        <span className="text-white font-bold text-lg">D</span>
-                    </div>
-                    <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-                        Droham
+                
+                <div className="group relative inline-flex items-center gap-1 px-4 py-2 rounded-2xl 
+                bg-gradient-to-br from-white/5 to-white/2 
+                backdrop-blur-xl border border-white/10 
+                shadow-[0_10px_30px_rgba(0,0,0,0.5)] 
+                transition-all duration-500 
+                hover:shadow-[0_20px_60px_rgba(0,0,0,0.7)] 
+                hover:-translate-y-1 cursor-pointer
+                animate-[float_6s_ease-in-out_infinite]
+">
+
+                    {/* Glow Background */}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r 
+                    from-orange-500/10 via-blue-500/10 to-purple-500/10 
+                    opacity-0 group-hover:opacity-100 
+                    blur-2xl transition-opacity duration-500 -z-10" />
+
+                    {/* Logo */}
+                    <img
+                        src={logo}
+                        alt="Droham Logo"
+                        className="h-10 md:h-12 w-auto object-contain 
+                   transition-transform duration-500 
+                   group-hover:scale-110 group-hover:rotate-[2deg]"
+                    />
+
+                    {/* Text */}
+                    <span style={{ fontFamily: '"Playwrite Cuba Guides", cursive' }} className="text-xl md:text-2xl font-semibold tracking-tight 
+                     bg-gradient-to-r from-white via-gray-200 to-gray-400 
+                     bg-clip-text text-transparent 
+                     transition-all duration-500 
+                     group-hover:tracking-normal ">
+                        roham
                     </span>
                 </div>
 
@@ -85,7 +115,8 @@ const Navbar = () => {
                     </button>
                     <button className="group relative px-5 py-2.5 bg-white/10 hover:bg-white/15 border border-white/10 rounded-full text-sm font-medium text-white transition-all duration-300 overflow-hidden">
                         <span className="relative z-10 flex items-center gap-1.5">
-                            Get Started <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-300" />
+                            Get Started{" "}
+                            <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-300" />
                         </span>
                         <div className="absolute inset-0 -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                     </button>
@@ -97,7 +128,11 @@ const Navbar = () => {
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     aria-label="Toggle menu"
                 >
-                    {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                    {mobileMenuOpen ? (
+                        <X className="w-5 h-5" />
+                    ) : (
+                        <Menu className="w-5 h-5" />
+                    )}
                 </button>
             </div>
 
