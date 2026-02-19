@@ -121,7 +121,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop CTA */}
-                <div className="hidden md:flex items-center gap-4">
+                {/* <div className="hidden md:flex items-center gap-4">
                     <button className="text-sm font-medium text-white hover:text-accent transition-colors duration-300">
                         Sign In
                     </button>
@@ -133,7 +133,7 @@ const Navbar = () => {
                         </span>
                         <div className="absolute inset-0 -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                     </button>
-                </div>
+                </div> */}
 
                 {/* Mobile Toggle */}
                 <button

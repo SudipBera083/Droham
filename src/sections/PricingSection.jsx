@@ -90,20 +90,22 @@ const PricingCard = ({ title, price, features, recommended = false, index }) => 
 const PricingSection = () => {
     const plans = [
         {
-            title: "Starter",
-            price: "$0",
-            features: ["Up to 3 users", "Basic analytics", "Community support", "1GB storage"],
+            title: "3 months",
+            price: "₹399",
+            
+            features: ["Advanced AI features", "Priority support", "256GB storage", "API access"],    
         },
         {
-            title: "Pro",
-            price: "$49",
+            title: "6 months",
+            price: "₹699",
             recommended: true,
-            features: ["Unlimited users", "Advanced AI features", "Priority support", "100GB storage", "API access"],
+            features: ["Advanced AI features", "Priority support", "512GB storage", "API access"],
         },
         {
-            title: "Enterprise",
-            price: "Custom",
-            features: ["Dedicated infrastructure", "SLA guarantee", "24/7 Phone support", "Unlimited storage", "Custom integrations"],
+            title: "11 months",
+            price: "₹1199",
+            
+            features: ["Advanced AI features", "Priority support", "1TB storage", "API access"],
         },
     ];
 

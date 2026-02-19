@@ -121,7 +121,7 @@ const FeatureSection = () => {
                                 </div>
 
                                 {/* Link Button */}
-                                <div className="relative z-20 translate-z-30 pt-4 mt-auto">
+                                {/* <div className="relative z-20 translate-z-30 pt-4 mt-auto">
                                     <a
                                         href={feature.link}
                                         className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-white transition-colors group/btn"
@@ -129,7 +129,7 @@ const FeatureSection = () => {
                                         Learn more
                                         <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                                     </a>
-                                </div>
+                                </div> */}
 
                                 {/* Glow Effect */}
                                 <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

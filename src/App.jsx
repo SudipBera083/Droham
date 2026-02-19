@@ -18,13 +18,13 @@ function Home() {
   return (
       <>
       <HeroSection />
-      <TrustSection />
+      {/* <TrustSection /> */}
       <ProblemSection />
       <FeatureSection />
       <UseCaseSection />
       <AnalyticsPreviewSection />
       <WhyDrohamSection />
-      <CTASection />
+      {/* <CTASection /> */}
       {/* <ContactSection /> */}
     </>
   );
