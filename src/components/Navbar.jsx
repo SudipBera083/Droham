@@ -29,10 +29,11 @@ const Navbar = () => {
     }, [mobileMenuOpen]);
 
     const navLinks = [
+        { name: "Home", href: "#" },
         { name: "Product", href: "#features" },
-        { name: "Solutions", href: "#solutions" },
+        { name: "About", href: "#about" },
         { name: "Pricing", href: "#pricing" },
-        { name: "Enterprise", href: "#enterprise" },
+        // { name: "Enterprise", href: "#enterprise" },
     ];
 
     const linkVariants = {
