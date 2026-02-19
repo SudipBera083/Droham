@@ -60,7 +60,9 @@ const Navbar = () => {
           shadow-[0_10px_30px_rgba(0,0,0,0.5)] 
           transition-all duration-500 
           hover:shadow-[0_20px_60px_rgba(0,0,0,0.7)] 
-          hover:-translate-y-1 cursor-pointer"
+          hover:-translate-y-1 cursor-pointer
+          animate-[float_6s_ease-in-out_infinite]
+"
                 >
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-r 
             from-orange-500/10 via-blue-500/10 to-purple-500/10 
