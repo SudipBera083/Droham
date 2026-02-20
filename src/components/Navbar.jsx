@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import clsx from "clsx";
 import logo from "@/assets/logo/logo.png";
 import { Link, useLocation } from "react-router-dom";
+import { Linkedin, Facebook, Instagram, Youtube } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -98,79 +99,126 @@ const Navbar = () => {
       </motion.nav>
 
       {/* ================= MOBILE MENU ================= */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <>
-            {/* Dark overlay */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.6 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black z-[998] md:hidden"
+<AnimatePresence>
+  {mobileMenuOpen && (
+    <>
+      {/* Dark overlay */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.6 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        className="fixed inset-0 bg-black z-[998] md:hidden"
+        onClick={() => setMobileMenuOpen(false)}
+      />
+
+      {/* Slide-in Drawer */}
+      <motion.div
+        initial={{ x: "100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "100%" }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="fixed top-0 right-0 h-full w-full bg-background z-[999] md:hidden shadow-2xl"
+      >
+        <div className="flex flex-col h-full px-6 py-8">
+
+          {/* Header */}
+          <div className="flex items-center justify-between mb-12">
+            <div className="flex items-center gap-2">
+              <img src={logo} alt="Droham" className="h-9 w-auto" />
+              <span
+                style={{ fontFamily: '"Playwrite Cuba Guides", cursive' }}
+                className="text-lg font-semibold text-white"
+              >
+                roham
+              </span>
+            </div>
+
+            <button
               onClick={() => setMobileMenuOpen(false)}
-            />
-
-            {/* Slide-in Drawer */}
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="fixed top-0 right-0 h-full w-full bg-background z-[999] md:hidden shadow-2xl"
+              className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5"
             >
-              <div className="flex flex-col h-full px-6 py-8">
+              <X className="w-5 h-5 text-white" />
+            </button>
+          </div>
 
-                {/* Header inside mobile menu */}
-                <div className="flex items-center justify-between mb-12">
-                  <div className="flex items-center gap-2">
-                    <img src={logo} alt="Droham" className="h-9 w-auto" />
-                    <span
-                      style={{ fontFamily: '"Playwrite Cuba Guides", cursive' }}
-                      className="text-lg font-semibold text-white"
-                    >
-                      roham
-                    </span>
-                  </div>
+          {/* Nav Links */}
+          <div className="flex flex-col gap-6">
+            {navLinks.map((link) =>
+              link.type === "route" ? (
+                <Link
+                  key={link.name}
+                  to={link.to}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-2xl font-semibold text-white"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.to}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-2xl font-semibold text-white"
+                >
+                  {link.name}
+                </a>
+              )
+            )}
+          </div>
 
-                  <button
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5"
-                  >
-                    <X className="w-5 h-5 text-white" />
-                  </button>
-                </div>
+          {/* Social Media Section */}
+          <div className="mt-auto pt-12">
 
-                {/* Navigation Links */}
-                <div className="flex flex-col gap-6">
-                  {navLinks.map((link) =>
-                    link.type === "route" ? (
-                      <Link
-                        key={link.name}
-                        to={link.to}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="text-2xl font-semibold text-white"
-                      >
-                        {link.name}
-                      </Link>
-                    ) : (
-                      <a
-                        key={link.name}
-                        href={link.to}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="text-2xl font-semibold text-white"
-                      >
-                        {link.name}
-                      </a>
-                    )
-                  )}
-                </div>
+            <p className="text-sm text-white/40 mb-4 tracking-widest uppercase">
+              Connect With Us
+            </p>
 
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+            <div className="flex items-center gap-6">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all hover:scale-110"
+              >
+                <Linkedin className="w-5 h-5 text-white" />
+              </a>
+
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all hover:scale-110"
+              >
+                <Facebook className="w-5 h-5 text-white" />
+              </a>
+
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all hover:scale-110"
+              >
+                <Instagram className="w-5 h-5 text-white" />
+              </a>
+
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all hover:scale-110"
+              >
+                <Youtube className="w-5 h-5 text-white" />
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </motion.div>
+    </>
+  )}
+</AnimatePresence>
     </>
   );
 };
