@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import { ReactLenis } from "lenis/react";
 import logo from "@/assets/logo/logo.png";
+import { Link } from "react-router-dom";
 import { Linkedin, Github, Youtube, Instagram } from "lucide-react";
 
 const MainLayout = ({ children }) => {
@@ -28,7 +29,7 @@ const MainLayout = ({ children }) => {
 
           {[
             { icon: <Linkedin size={20} />, href: "#" },
-            { icon: <Github size={20} />, href: "#" },
+            // { icon: <Github size={20} />, href: "#" },
             { icon: <Youtube size={20} />, href: "#" },
             { icon: <Instagram size={20} />, href: "#" },
           ].map((item, i) => (
@@ -89,22 +90,35 @@ const MainLayout = ({ children }) => {
 
               {/* Quick Links */}
               <div>
-                <h4 className="text-white font-semibold mb-6">
+                <h4 className="text-white font-semibold mb-6 tracking-wide">
                   Quick Links
                 </h4>
+
                 <div className="flex flex-col gap-4">
-                  {["Privacy Policy", "Terms of Service", "Security", "Status"].map((link) => (
-                    <a
-                      key={link}
-                      href="#"
-                      className="text-secondary hover:text-white transition-colors duration-300"
+
+                  {[
+                    { name: "Privacy Policy", to: "/privacy" },
+                    { name: "Terms of Service", to: "/terms" },
+                    { name: "Security", to: "/security" },
+                    { name: "Status", to: "/status" },
+                  ].map((link, index) => (
+                    <Link
+                      key={link.name}
+                      to={link.to}
+                      className="group relative text-secondary hover:text-white transition-all duration-300 pl-0"
                     >
-                      {link}
-                    </a>
+                      {link.name}
+
+                      {/* Animated underline */}
+                      <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
+
+                      {/* Subtle left accent */}
+                      <span className="absolute -left-3 top-1/2 -translate-y-1/2 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-2" />
+                    </Link>
                   ))}
+
                 </div>
               </div>
-
               {/* Contact */}
               <div>
                 <h4 className="text-white font-semibold mb-6">

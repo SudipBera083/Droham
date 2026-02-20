@@ -14,10 +14,13 @@ import AnalyticsPreviewSection from "@/sections/AnalyticsPreviewSection";
 import WhyDrohamSection from "@/sections/WhyDrohamSection";
 import UseCaseSection from "@/sections/UseCaseSection";
 import Product from "@/sections/Product";
-
+import Privacy from "@/sections/Privacy";
+import Terms from "@/sections/Terms";
+import Security from "@/sections/Security";
+import Status from "@/sections/Status";
 function Home() {
   return (
-      <>
+    <>
       <HeroSection />
       {/* <TrustSection /> */}
       <ProblemSection />
@@ -39,6 +42,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/pricing" element={<PricingSection />} />
         <Route path="/products" element={<Product />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/security" element={<Security />} />
+        <Route path="/status" element={<Status />} />
       </Routes>
     </MainLayout>
   );
