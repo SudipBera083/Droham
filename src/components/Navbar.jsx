@@ -10,14 +10,14 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Scroll detection
+  // Scroll Detection
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock scroll when mobile menu is open
+  // Lock Body Scroll
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
     return () => {
@@ -25,7 +25,7 @@ const Navbar = () => {
     };
   }, [mobileMenuOpen]);
 
-  // Close mobile menu on route change
+  // Close on Route Change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);
@@ -51,18 +51,11 @@ const Navbar = () => {
             : "bg-transparent border-transparent py-4 md:py-5"
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
           {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center gap-2 px-4 py-2 rounded-xl"
-          >
-            <img
-              src={logo}
-              alt="Droham Logo"
-              className="h-10 md:h-12 w-auto object-contain"
-            />
+          <Link to="/" className="flex items-center gap-2">
+            <img src={logo} alt="Droham" className="h-10 md:h-12 w-auto" />
             <span
               style={{ fontFamily: '"Playwrite Cuba Guides", cursive' }}
               className="text-xl md:text-2xl font-semibold text-white"
@@ -97,14 +90,9 @@ const Navbar = () => {
           {/* Mobile Toggle */}
           <button
             className="md:hidden w-11 h-11 flex items-center justify-center rounded-lg bg-white/5"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            onClick={() => setMobileMenuOpen(true)}
           >
-            {mobileMenuOpen ? (
-              <X className="w-5 h-5 text-white" />
-            ) : (
-              <Menu className="w-5 h-5 text-white" />
-            )}
+            <Menu className="w-5 h-5 text-white" />
           </button>
         </div>
       </motion.nav>
@@ -123,17 +111,37 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             />
 
-            {/* Solid menu panel */}
+            {/* Slide-in Drawer */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="fixed top-0 right-0 h-full w-full bg-background z-[999] md:hidden"
+              className="fixed top-0 right-0 h-full w-full bg-background z-[999] md:hidden shadow-2xl"
             >
-              <div className="flex flex-col h-full px-6 py-16">
+              <div className="flex flex-col h-full px-6 py-8">
 
-                {/* Links */}
+                {/* Header inside mobile menu */}
+                <div className="flex items-center justify-between mb-12">
+                  <div className="flex items-center gap-2">
+                    <img src={logo} alt="Droham" className="h-9 w-auto" />
+                    <span
+                      style={{ fontFamily: '"Playwrite Cuba Guides", cursive' }}
+                      className="text-lg font-semibold text-white"
+                    >
+                      roham
+                    </span>
+                  </div>
+
+                  <button
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5"
+                  >
+                    <X className="w-5 h-5 text-white" />
+                  </button>
+                </div>
+
+                {/* Navigation Links */}
                 <div className="flex flex-col gap-6">
                   {navLinks.map((link) =>
                     link.type === "route" ? (
