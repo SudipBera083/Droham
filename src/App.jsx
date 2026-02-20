@@ -13,6 +13,7 @@ import ProblemSection from "@/sections/ProblemSection";
 import AnalyticsPreviewSection from "@/sections/AnalyticsPreviewSection";
 import WhyDrohamSection from "@/sections/WhyDrohamSection";
 import UseCaseSection from "@/sections/UseCaseSection";
+import Product from "@/sections/Product";
 
 function Home() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/pricing" element={<PricingSection />} />
+        <Route path="/products" element={<Product />} />
       </Routes>
     </MainLayout>
   );

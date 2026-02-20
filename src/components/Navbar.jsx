@@ -34,7 +34,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", to: "/", type: "route" },
     { name: "About", to: "/about", type: "route" },
-    { name: "Product", to: "#features", type: "anchor" },
+    { name: "Product", to: "/products", type: "route" },
     { name: "Pricing", to: "/pricing", type: "route" },
   ];
 
