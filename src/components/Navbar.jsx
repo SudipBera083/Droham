@@ -176,7 +176,7 @@ const Navbar = () => {
 
             <div className="flex items-center gap-6">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/droham-private-lmtd/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all hover:scale-110"
@@ -185,7 +185,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/1DPMi5MGi8/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all hover:scale-110"
@@ -202,14 +202,14 @@ const Navbar = () => {
                 <Instagram className="w-5 h-5 text-white" />
               </a>
 
-              <a
+              {/* <a
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all hover:scale-110"
               >
                 <Youtube className="w-5 h-5 text-white" />
-              </a>
+              </a> */}
             </div>
 
           </div>

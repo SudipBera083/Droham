@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import { ReactLenis } from "lenis/react";
 import logo from "@/assets/logo/logo.png";
 import { Link } from "react-router-dom";
-import { Linkedin, Github, Youtube, Instagram } from "lucide-react";
+import { Linkedin, Github, Youtube, Instagram, Facebook } from "lucide-react";
 
 const MainLayout = ({ children }) => {
   return (
@@ -28,9 +28,9 @@ const MainLayout = ({ children }) => {
         <div className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-5">
 
           {[
-            { icon: <Linkedin size={20} />, href: "#" },
+            { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/company/droham-private-lmtd/" },
             // { icon: <Github size={20} />, href: "#" },
-            { icon: <Youtube size={20} />, href: "#" },
+            { icon: <Facebook size={20} />, href: "https://www.facebook.com/share/1DPMi5MGi8/" },
             { icon: <Instagram size={20} />, href: "#" },
           ].map((item, i) => (
             <a
