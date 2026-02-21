@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ChevronRight, Activity, Globe, Shield, Zap } from "lucide-react";
 import TiltContainer from "@/components/ui/TiltContainer";
 import Cube3D from "@/components/ui/Cube3D";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
     const containerRef = useRef(null);
@@ -78,18 +79,36 @@ const HeroSection = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                             <Link
+                                    to="/products"
+                                      >
                             <button className="group relative px-8 py-4 bg-white text-black font-bold rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] overflow-hidden">
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-200 to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-700 ease-in-out" />
-                                <span className="relative flex items-center gap-2">
-                                    Start Building <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                </span>
-                            </button>
 
+                               
+                                    <span className="relative flex items-center gap-2">
+                                        Start Building
+                                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                    </span>
+                                
+
+
+                            </button>
+                            </Link>
+
+
+                              {/* <Link
+                                    to="/documentation"
+                                    // className="group relative inline-flex items-center px-6 py-3 bg-primary rounded-lg overflow-hidden"
+                                >
                             <button className="px-8 py-4 bg-white/5 text-white font-medium rounded-full hover:bg-white/10 border border-white/10 backdrop-blur-md transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2">
                                 <Zap className="w-5 h-5 text-yellow-400 fill-yellow-400/20" />
                                 Documentation
                             </button>
-                        </div>
+                            </Link>  */}
+                        </div> 
+
+                        
                     </motion.div>
 
                     {/* 3D Visual */}

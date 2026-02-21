@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const WhyDrohamSection = () => {
   return (
@@ -120,14 +122,19 @@ const WhyDrohamSection = () => {
           className="mt-28"
         >
           <p className="text-2xl font-medium text-white max-w-4xl mx-auto">
-            Droham is not just ERP.  
+            Droham is not just ERP.
             It is the operational intelligence backbone for enterprises
             preparing to scale with confidence.
           </p>
           <br /><br />
-          <button className="px-10 py-4 rounded-full bg-accent text-white font-semibold text-lg hover:bg-accent-glow transition-all">
-        Book a Demo
-      </button>
+
+          <Link
+            to="/products"
+          >
+            <button className="px-10 py-4 rounded-full bg-accent text-white font-semibold text-lg hover:bg-accent-glow transition-all">
+              Book a Demo
+            </button>
+          </Link>
         </motion.div>
 
       </div>

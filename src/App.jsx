@@ -18,6 +18,9 @@ import Privacy from "@/sections/Privacy";
 import Terms from "@/sections/Terms";
 import Security from "@/sections/Security";
 import Status from "@/sections/Status";
+import Documentation from "./sections/Documentation";
+
+
 function Home() {
   return (
     <>
@@ -46,6 +49,7 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/security" element={<Security />} />
         <Route path="/status" element={<Status />} />
+        <Route path="/documentation" element={<Documentation />} />
       </Routes>
     </MainLayout>
   );
